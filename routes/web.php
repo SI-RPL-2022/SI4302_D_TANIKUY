@@ -13,15 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/tugas', function () {
-    return view('tugas');
+Route::get('/', function () {
+    return view('welcome');
 });
-
-Route::get('/soal', function () {
-    return view('soal');
-});
-
-Route::get('/nilai', function () {
-    return view('nilai');
-});
-
