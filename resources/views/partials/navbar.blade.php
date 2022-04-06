@@ -15,7 +15,7 @@
 		<div class="nav_right">
 			<ul>
 				<li class="nr_li dd_main">
-					<img src="https://i.imgur.com/2QKIaJ5.png" alt="profile_img">
+					<img src="image/img_avatar.png" alt="profile_img">
 					
 					<div class="dd_menu">
 						<div class="dd_left">
