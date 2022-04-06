@@ -15,7 +15,11 @@
 		<div class="nav_right">
 			<ul>
 				<li class="nr_li dd_main">
+<<<<<<< HEAD
 					<img src="image/img_avatar.png" alt="profile_img">
+=======
+					<img src="https://i.imgur.com/2QKIaJ5.png" alt="profile_img">
+>>>>>>> parent of 90903ef (Revert "navbar dan front end halaman user assessment (masih berantakan)")
 					
 					<div class="dd_menu">
 						<div class="dd_left">
