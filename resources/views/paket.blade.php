@@ -2,7 +2,7 @@
 @section('container')
 <div class="container d-flex" style='margin-top: 5%; margin-left: 27%'>
     <div class="card" style="width: 18rem;">
-        <img src="image/gogo.png" class="card-img-top" alt="..." style="width:80%; margin-left: 10%">
+        <img src="image/legogo.png" class="card-img-top" alt="..." style="width:80%; margin-left: 10%">
         <div class="card-body">
             <h3 class="card-title" style="">FREE</h3>
             <h5 class="card-title">Card title</h5>
