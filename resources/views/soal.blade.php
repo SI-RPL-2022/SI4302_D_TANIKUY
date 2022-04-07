@@ -3,7 +3,7 @@
 <h1 style="font-size: 30px;padding-left: 0.1%;padding-top: 1%"><b>Assessment Tani 1</b></h1>
 
 
-<div class="container" style='margin-top: 20px;'>
+<div class="container d-flex justify-content-center" style='margin-top: 20px;'>
 
 <div class="card" style="width: 40%; margin-bottom: 5px;">
   <div class="card-body">
