@@ -34,7 +34,12 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
-
+Route::get('/buy_course', function () {
+    return view('buy_course');
+});
+Route::get('/course', function () {
+    return view('course');
+});
 
 Auth::routes();
 
