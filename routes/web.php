@@ -25,3 +25,19 @@ Route::get('/nilai', function () {
     return view('nilai');
 });
 
+Route::get('/adminDash', function(){
+    return view('adminDash');
+});
+
+/* NYOBA */
+Route::get('/ojanmain', function(){
+    return view('ojanmain');
+});
+
+Route::get('/addCourse', function(){
+    return view('tambahcourse');
+});
+
+Route::get('/editCourse', function(){
+    return view('editcourse');
+});
