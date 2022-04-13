@@ -40,6 +40,9 @@ Route::get('/buy_course', function () {
 Route::get('/course', function () {
     return view('course');
 });
+Route::get('paymentVerif', function () {
+    return view('admin/paymentVerif');
+});
 
 Auth::routes();
 
