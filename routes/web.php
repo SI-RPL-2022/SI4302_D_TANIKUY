@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\AssessmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +24,11 @@ Route::get('/soal', function () {
 Route::get('/nilai', function () {
     return view('nilai');
 });
+
+Route::get('/listsoal', function () {
+    return view('listsoal');
+});
+
+Route::get('/buatsoal', [AssessmentController::class, 'create']);
+Route::post('/buatsoal', [AssessmentController::class, 'store']);
 
