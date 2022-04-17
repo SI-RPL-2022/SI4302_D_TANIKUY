@@ -16,14 +16,10 @@ use App\Http\Controllers\AssessmentController;
 */
 
 
-Route::get('/tugas', function () {
-    return view('tugas');
-});
+Route::get('/tugas', [AssessmentController::class, 'indextugas']);
 
 
-Route::get('/soal', function () {
-    return view('soal');
-});
+Route::get('/soal/{id}', [AssessmentController::class, 'indexsoal']);
 
 Route::get('/submit', function () {
     return view('submit');

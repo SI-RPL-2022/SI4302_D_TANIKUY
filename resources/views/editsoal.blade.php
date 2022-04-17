@@ -15,6 +15,11 @@
         <label for="deskripsi" class="form-label">Deskripsi</label>
         <input type="text" name="deskripsi" id="deskripsi" value="{{$assessment->deskripsi}}" class="form-control">     
     </div>
+    <div class="row p-2 m-2">
+        
+        <label for="soal" class="form-label">Soal</label>
+        <input type="text" name="soal" id="soal" value="{{$assessment->soal}}" class="form-control">     
+    </div>
     <button type="submit" class="btn btn-primary btn-md">Submit</button>
 	</div>
     </form>

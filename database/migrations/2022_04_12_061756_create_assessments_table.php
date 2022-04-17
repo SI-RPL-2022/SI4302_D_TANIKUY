@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_ass');
             $table->text('deskripsi');
+            $table->text('soal')->nullable();
         });
     }
 

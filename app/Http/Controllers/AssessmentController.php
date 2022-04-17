@@ -10,6 +10,7 @@ class AssessmentController extends Controller
     	$data = new assessment();
     	$data->nama_ass = $request->nama_ass;
     	$data->deskripsi = $request->deskripsi;
+        $data->soal = $request->soal;
     	$data->save();
     	return redirect('listsoal');
     }
@@ -34,6 +35,7 @@ class AssessmentController extends Controller
         $assessment2 = assessment::find($id);
         $assessment2->nama_ass = $request->nama_ass;
         $assessment2->deskripsi = $request->deskripsi;
+        $assessment2->soal = $request->soal;
         $assessment2->save();
         $assessment = assessment::all();
         return view('listsoal',compact('assessment'));
@@ -42,8 +44,18 @@ class AssessmentController extends Controller
     public function delete($id) 
        {
           $assessment3 = assessment::where('id', $id)->firstorfail()->delete();
-          return view('listsoal',compact('assessment'));
+          return redirect("/listsoal");
        }
+
+    public function indextugas(){
+        $assessment = assessment::all();
+        return view('tugas',compact('assessment'));
+    }
+
+    public function indexsoal($id){
+        $assessment = assessment::find($id);
+        return view('soal',compact('assessment'));
+    }
 
 
 }

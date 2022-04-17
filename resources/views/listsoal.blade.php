@@ -9,14 +9,20 @@
             <th>No</th>
             <th>Nama Assessment</th>
             <th>Deskripsi</th>
+            <th>Soal</th>
+
         </tr>
     </thead>
     <tbody>
+        @php
+        $num = 1;
+        @endphp
         @foreach($assessment as $key)
         <tr>
-            <td>{{$key->id}}</td>
+            <td>{{$num}}</td>
             <td>{{$key->nama_ass}}</td>
             <td>{{$key->deskripsi}}</td>
+            <td>{{$key->soal}}</td>
             <td>
                 <form action="/editsoal/{{$key->id}}" method="POST">
                 @csrf
@@ -29,7 +35,16 @@
             	<button type="submit" class="btn btn-outline-danger">DELETE</button>
                 </form>
             </td>
-        </tr>  
+            <td>
+                <form action="/listsoal2/{{$key->id}}" method="POST">
+                @csrf 
+                <button type="submit" class="btn btn-outline-primary">VIEW</button>
+                </form>
+            </td>
+        </tr> 
+        @php
+        $num++;
+        @endphp 
         @endforeach    
     </tbody>
 </table>

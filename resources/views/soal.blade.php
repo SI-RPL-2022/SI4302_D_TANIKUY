@@ -7,7 +7,7 @@
 
 <div class="card" style="width: 40%; margin-bottom: 5px;">
   <div class="card-body">
-    <h5 class="card-title">{{$key->pertanyaan}}</h5>
+    <h5 class="card-title">{{$assessment->soal}}</h5>
     <p class="card-text">
     <textarea id="jawaban" name="jawaban" rows="4" cols="50" class="textareajawab" placeholder="Silahkan isi sepengetahuan anda"></textarea>
 <a href="{{url('/submit')}}"><button class="btn btn-primary btn-md">Submit</button></a>
