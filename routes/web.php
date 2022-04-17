@@ -49,6 +49,10 @@ Route::get('/dashadmin', function () {
 Route::get('/tambahPaket', function () {
     return view('tambahPaket');
 });
+Route::get('/editPaket', function () {
+    return view('editPaket');
+});
+
 
 
 Auth::routes();

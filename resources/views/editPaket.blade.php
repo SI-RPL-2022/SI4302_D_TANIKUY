@@ -49,41 +49,29 @@
                         </div>
                     </div>
                 </nav>
-                <!-- Page content -->
-                <div class="container-fluid">
-                    <h1 class="mt-4">Dashboard Admin</h1> <!-- style="width: 30rem;" -->
-                    <div>
-                    <form action="" method="POST" >
-                        @csrf
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="type">Nama Paket</label>
-                                <select class="form-control" id="type" name="tipePaket" required>
-                                    <option value="STANDARD">FREE</option>
-                                    <option value="PREMIUM">PREMIUM</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="type">List Course</label>
-                                <select class="form-control" id="type" name="namaCourse" required>
-                                    <option value="STANDARD">PERTANIAN</option>
-                                    <option value="PREMIUM">PERKEBUNAN</option>
-                                    <option value="EXECUTIVE">PERMUSYAWARATAN</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Harga Paket</label>
-                                <input type="text" class="form-control" name="hargaPaket" placeholder="Masukkan Harga Paket">
-                            </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Save</button>
-</div>
-                    </form>
-                    </div>
-                </div>
+                <br>
+                <a class="btn btn-info" href="">Add Package</a>
+                <br>
+                <table class="table-bordered table">
+                  <tr>
+                    <th>Nama Paket</th>
+                    <th>List Course</th>
+                    <th>Harga Paket</th>
+                    <th colspan="2">Action</th>
+                  </tr>
+                      <tr>
+                          <td>premium</td>
+                          <td>pertanian</td>
+                          <td>900000</td>
+                          <td><a class="btn btn-info" href="">Update</a></td>
+                          <td><a class="btn btn-danger" href="">Delete</a></td>
+                      </tr>
+                </table>
             </div>
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+    <body>
+</html>
