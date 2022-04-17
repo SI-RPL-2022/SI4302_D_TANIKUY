@@ -37,6 +37,19 @@ Route::get('/register', function () {
 Route::get('/paket', function () {
     return view('paket');
 });
+Route::get('/pilihpaket', function () {
+    return view('pilihpaket');
+});
+Route::get('/paketadmin', function () {
+    return view('paketadmin');
+});
+Route::get('/dashadmin', function () {
+    return view('dashadmin');
+});
+Route::get('/tambahPaket', function () {
+    return view('tambahPaket');
+});
+
 
 Auth::routes();
 
