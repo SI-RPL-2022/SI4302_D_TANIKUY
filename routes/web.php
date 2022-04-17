@@ -40,11 +40,21 @@ Route::get('/buy_course', function () {
 Route::get('/course', function () {
     return view('course');
 });
+Route::get('ADMINpaymentVerif', function () {
+    return view('ADMINpaymentVerif');
+});
 Route::get('paymentVerif', function () {
-    return view('admin/paymentVerif');
+    return view('paymentVerif');
+});
+Route::get('payment', function () {
+    return view('payment');
+});
+Route::get('riwayatBeli', function () {
+    return view('riwayatBeli');
 });
 
 Auth::routes();
 
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin.home')->middleware('is_admin');
 Route::get('siswa/home', [App\Http\Controllers\HomeController::class, 'siswa'])->name('siswa.home')->middleware('is_siswa');
+  

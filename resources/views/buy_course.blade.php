@@ -1,108 +1,132 @@
 @extends('layouts.main')
 @section('container')
+<link href="sidebars.css" rel="stylesheet">
+<link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<div class="flex-shrink-0 p-3 bg-white" style="width: 240px;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-      <span class="fs-5 fw-semibold">Collapsible</span>
-    </a>
-    <ul class="list-unstyled ps-0">
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Home
-        </button>
-        <div class="collapse show" id="home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Updates</a></li>
-            <li><a href="#" class="link-dark rounded">Reports</a></li>
+<div class="container" style="width: 100%; margin-top:2px;">
+    <div class="container py-4">
+    <div class="row align-items-md-stretch">
+      <div class="col-md-3">
+        <div class="h-100 p-3 text-white rounded-3" style="background: #579924">
+          <ul class="list-unstyled ps-0">
+              <li class="mb-1 ">
+                <button class="btn btn-toggle align-items-center rounded collapsed text-light" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                  Home
+                </button>
+                <div class="collapse show" id="home-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-light rounded">Overview</a></li>
+                    <li><a href="#" class="link-light rounded">Updates</a></li>
+                    <li><a href="#" class="link-light rounded">Reports</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded collapsed text-light" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                  Dashboard
+                </button>
+                <div class="collapse" id="dashboard-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-light rounded">Overview</a></li>
+                    <li><a href="#" class="link-light rounded">Weekly</a></li>
+                    <li><a href="#" class="link-light rounded">Monthly</a></li>
+                    <li><a href="#" class="link-light rounded">Annually</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded collapsed text-light" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                  Orders
+                </button>
+                <div class="collapse" id="orders-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-light rounded">New</a></li>
+                    <li><a href="#" class="link-light rounded">Processed</a></li>
+                    <li><a href="#" class="link-light rounded">Shipped</a></li>
+                    <li><a href="#" class="link-light rounded">Returned</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="border-top my-3"></li>
+                <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed text-light" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                    Account
+                  </button>
+                  <div class="collapse" id="account-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      <li><a href="#" class="link-light rounded">New...</a></li>
+                      <li><a href="#" class="link-light rounded">Profile</a></li>
+                      <li><a href="#" class="link-light rounded">Settings</a></li>
+                      <li><a href="#" class="link-light rounded">Sign out</a></li>
+                    </ul>
+                  </div>
+                </li>
+          </ul>
+          <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+            <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
           </ul>
         </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Dashboard
-        </button>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-            <li><a href="#" class="link-dark rounded">Annually</a></li>
-          </ul>
         </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Orders
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">New</a></li>
-            <li><a href="#" class="link-dark rounded">Processed</a></li>
-            <li><a href="#" class="link-dark rounded">Shipped</a></li>
-            <li><a href="#" class="link-dark rounded">Returned</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="border-top my-3"></li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          Account
-        </button>
-        <div class="collapse" id="account-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">New...</a></li>
-            <li><a href="#" class="link-dark rounded">Profile</a></li>
-            <li><a href="#" class="link-dark rounded">Settings</a></li>
-            <li><a href="#" class="link-dark rounded">Sign out</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
+      </div>
 
-
-<div class="container" style="width: 80%; margin-top:2px;">
-    <div class="row">
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://dbijapkm3o6fj.cloudfront.net/resources/3866,1004,1,6,4,0,600,450/-4608-/20210506215542/meetings.jpeg" alt="Ciputra">
-            <div class="card-body">
-                <h5 class="card-title">Budidaya Hidroponik</h5>
-                <p class="card-text" style="color: #808080"><small>Prof. Haikal Terra</small></p>
-                <p class="card-text" style="color: #808080"><small>Rp150.000</small></p>
+      <div class="col-md-9">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="col-3">
+              <div class="card" style="width: 15rem;">
+                <img src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">KELAS HAMA</h5>
+                  <p class="card-text" style="color: #808080"><small>Prof. Najendra Arzan</small></p>
+                  <p class="card-text" style="color: #808080"><small>Rp150.000</small></p>                
+                </div>
+                <div class="card-footer">
+                  <a href="riwayatBeli" class="btn btn-primary float-right" type="submit">Beli</a>
+                </div>
+              </div>
             </div>
-            <div class="card-body">
-                <a href="#" class="btn btn-primary">Beli Sekarang</a>
+            <div class="col-3">
+              <div class="card" style="width: 15rem;">
+                <img src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">KELAS KEBUN</h5>
+                  <p class="card-text" style="color: #808080"><small>Prof. Najendra Arzan</small></p>
+                  <p class="card-text" style="color: #808080"><small>Rp150.000</small></p>                
+                </div>
+                <div class="card-footer">
+                  <a href="riwayatBeli" class="btn btn-primary float-right" type="submit">Beli</a>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-    <div class="col-sm">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://d21bklzz9tc7ug.cloudfront.net/shrine/venuephotos/26681/gandaria-city-hall-sewa-function-room-jakarta-selatan-large.jpg" alt="Gandaria">
-            <div class="card-body">
-                <h5 class="card-title">Budidaya Kangkung</h5>
+            <div class="col-3">
+              <div class="card h-100" style="width: 15rem;">
+                <img src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">KELAS SAWAH</h5>
                   <p class="card-text" style="color: #808080"><small>Prof. Najendra Arzan</small></p>
                   <p class="card-text" style="color: #808080"><small>Rp150.000</small></p>
+                </div>
+              <div class="card-footer">
+                <a href="riwayatBeli" class="btn btn-primary float-right" type="submit">Beli</a>
+              </div>
             </div>
-            <div class="card-body">
-                <a href="#" class="btn btn-primary">Beli Sekarang</a>
-            </div>
+          </div>
         </div>
-    </div>
-    <div class="col-sm">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://hardaparamasentosa.com/images/user_upload/products/5b987d226770e.jpg" alt="Harda Parama">
-            <div class="card-body">
-                <h5 class="card-title">Hama Sayuran</h5>
-                <p class="card-text" style="color: #808080"><small>Prof.Kevan Mahesa</small></p>
-                <p class="card-text" style="color: #808080"><small>Rp150.000</small></p>
-            </div>
-            <div class="card-body">
-                <a href="#" class="btn btn-primary">Beli Sekarang</a>
-            </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>
+
+    <footer class="pt-3 mt-4 text-muted border-top">
+      &copy; 2021
+    </footer>
+  </div>
 </div>
 
 @endsection

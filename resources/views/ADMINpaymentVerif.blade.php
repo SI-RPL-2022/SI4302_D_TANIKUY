@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('container')
 
-<div class="container" style="width: 80%; margin-top:2px;">
+<div class="container" style="width: 100%; margin-top:2px;">
     <div class="container py-4">
     <header class="pb-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
@@ -30,8 +30,8 @@
       <td>pict</td>
       <td>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">Left</button>
-          <button type="button" class="btn btn-primary">Right</button>
+          <a type="button" class="btn btn-primary">Accept</a>
+          <a type="button" class="btn btn-primary">Decline</a>
         </div>
       </td>
     </tr>
@@ -43,8 +43,8 @@
       <td>pict</td>
       <td>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">Left</button>
-          <button type="button" class="btn btn-primary">Right</button>
+          <a type="button" class="btn btn-primary">Accept</a>
+          <a type="button" class="btn btn-primary">Decline</a>
         </div>
       </td>
     </tr>
@@ -56,8 +56,8 @@
       <td>pict</td>
       <td>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">Left</button>
-          <button type="button" class="btn btn-primary">Right</button>
+          <a type="button" class="btn btn-primary">Accept</a>
+          <a type="button" class="btn btn-primary">Decline</a>
         </div>
       </td>
     </tr>
