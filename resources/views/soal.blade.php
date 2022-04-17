@@ -7,8 +7,14 @@
 
 <div class="card" style="width: 40%; margin-bottom: 5px;">
   <div class="card-body">
+  	<form action="{{url('/soal')}}" method="POST">
+  	@csrf
+  	<input type="hidden" name="assessments_id" value="{{$assessment->id}}">
     <h5 class="card-title">{{$assessment->soal}}</h5>
-    <p class="card-text">
+    <input type="hidden" name="soal" value="{{$assessment->soal}}">
     <textarea id="jawaban" name="jawaban" rows="4" cols="50" class="textareajawab" placeholder="Silahkan isi sepengetahuan anda"></textarea>
-<a href="{{url('/submit')}}"><button class="btn btn-primary btn-md">Submit</button></a>
+	<a href="{{url('/submit')}}"><button class="btn btn-primary btn-md">Submit</button></a>
+	</form>
+  </div>
+</div>
 @endsection

@@ -4,12 +4,9 @@
 
 
 <div class="container d-flex justify-content-center" style='margin-top: 20px;'>
-
+@csrf
 <div class="card-body">
-    <div class="row p-2 m-2">
-        <label for="nama_ass" class="form-label">Nama User</label>
-        <input type="text" name="nama_ass" id="nama_ass" class="form-control" value="{{$assessment->users_id}}">
-    </div>
+    <form action="{{url('/jawabanuser')}}" method="POST">
     <div class="row p-2 m-2">
         <label for="deskripsi" class="form-label">Nama Assessment</label>
         <input type="text" name="deskripsi" id="deskripsi" class="form-control" value="{{$assessment->$nama_ass}}">
@@ -20,7 +17,11 @@
     </div>
     <div class="row p-2 m-2">
         <label for="soal" class="form-label">Jawaban</label>
-        <input type="text" name="soal" id="soal" class="form-control">
+        <input type="text" name="jawaban" id="jawaban" class="form-control" value="{{$assessment->$jawaban}}">
+    </div>
+    <div class="row p-2 m-2">
+        <label for="soal" class="form-label">Nilai</label>
+        <input type="text" name="nilai" id="nilai" class="form-control" value="{{$assessment->$nilai}}">
     </div>
     <button type="submit" class="btn btn-primary btn-md">Submit</button>
 	</div>

@@ -36,7 +36,7 @@
                 </form>
             </td>
             <td>
-                <form action="/listsoal2/{{$key->id}}" method="POST">
+                <form action="/jawabanuser/{{$key->id}}" method="POST">
                 @csrf 
                 <button type="submit" class="btn btn-outline-primary">VIEW</button>
                 </form>

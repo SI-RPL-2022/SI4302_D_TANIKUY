@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('jawabans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('assessments_id');
             $table->foreign('assessments_id')->references('id')->on('assessments');
             $table->text('soal');
             $table->text('jawaban');
+            $table->text('nilai')->nullable();
             $table->timestamps();
         });
     }

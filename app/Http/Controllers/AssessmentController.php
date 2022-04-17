@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\assessment;
+use App\Models\jawabanuser;
 use Illuminate\Http\Request;
 
 class AssessmentController extends Controller
@@ -14,6 +15,7 @@ class AssessmentController extends Controller
     	$data->save();
     	return redirect('listsoal');
     }
+
     public function create(){
     	return view('buatsoal');
     }
@@ -55,6 +57,20 @@ class AssessmentController extends Controller
     public function indexsoal($id){
         $assessment = assessment::find($id);
         return view('soal',compact('assessment'));
+    }
+
+    public function storejawaban(Request $request){
+        $data = new jawabanuser();
+        $data->assessments_id = $request->assessments_id;
+        $data->soal = $request->soal;
+        $data->jawaban = $request->jawaban;
+        $data->save();
+        return view('submit');
+    }
+
+    public function indexjawaban($id){
+        $jawabanuser = jawabanuser::find($id);
+        return view('jawabanuser',compact('jawabanuser'));
     }
 
 
