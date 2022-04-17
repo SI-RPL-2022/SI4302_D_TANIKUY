@@ -10,5 +10,5 @@ class assessment extends Model
 	protected $fillable=['nama_ass','pertanyaan'];
 	public $timestamps=false;
     use HasFactory;
-}
+}	
 

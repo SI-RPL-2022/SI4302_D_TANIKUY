@@ -1,36 +1,36 @@
 @extends('layouts.main')
 @section('container')
 <div class="col-md-12 bg-light text-right">
-	<button type="button" class="btn btn-outline-primary" style="">+ Create New Assessment</button>
+	<a href="{{url('/buatsoal')}}"><button type="button" class="btn btn-outline-primary" style="">+ Create New Assessment</button></a>
 </div>
 <table class="table table-hover">
     <thead>
         <tr>
             <th>No</th>
             <th>Nama Assessment</th>
-            <th>Soal</th>
+            <th>Deskripsi</th>
         </tr>
     </thead>
     <tbody>
+        @foreach($assessment as $key)
         <tr>
-            <td>1</td>
-            <td>Assessment Tani 1</td>
-            <td>Apa Pengaruh Hama Pada Tanaman ?</td>
+            <td>{{$key->id}}</td>
+            <td>{{$key->nama_ass}}</td>
+            <td>{{$key->deskripsi}}</td>
             <td>
-            	<button type="button" class="btn btn-outline-warning" style="margin-right: 3px">EDIT</button>
-            	<button type="button" class="btn btn-outline-danger">DELETE</button>
+                <form action="/editsoal/{{$key->id}}" method="POST">
+                @csrf
+                    <button type="submit" class="btn btn-outline-warning">EDIT</button>
+                </form>
             </td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Assessment Tani 2</td>
-            <td>Bagaimana cara bertani tergantung musim ?</td>
             <td>
-            	<button type="button" class="btn btn-outline-warning" style="margin-right: 3px">EDIT</button>
-            	<button type="button" class="btn btn-outline-danger">DELETE</button>
+            	<form action="/listsoal2/{{$key->id}}" method="delete">
+                @csrf @method('DELETE')
+            	<button type="submit" class="btn btn-outline-danger">DELETE</button>
+                </form>
             </td>
-
-        </tr>            
+        </tr>  
+        @endforeach    
     </tbody>
 </table>
 @endsection

@@ -1,6 +1,8 @@
 <?php
-use App\Http\Controllers\AssessmentController;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\AssessmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +15,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/tugas', function () {
     return view('tugas');
 });
+
 
 Route::get('/soal', function () {
     return view('soal');
 });
 
-Route::get('/nilai', function () {
-    return view('nilai');
+Route::get('/submit', function () {
+    return view('submit');
 });
 
-Route::get('/listsoal', function () {
-    return view('listsoal');
-});
 
+Route::get('/listsoal', [AssessmentController::class, 'index']);
+Route::post('/editsoal/{id}', [AssessmentController::class, 'index2']);
+Route::post('/editsoal2/{id}', [AssessmentController::class, 'update']);
 Route::get('/buatsoal', [AssessmentController::class, 'create']);
 Route::post('/buatsoal', [AssessmentController::class, 'store']);
-
+Route::get('/listsoal2/{id}', [AssessmentController::class, 'delete']);

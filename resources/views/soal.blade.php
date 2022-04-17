@@ -7,8 +7,8 @@
 
 <div class="card" style="width: 40%; margin-bottom: 5px;">
   <div class="card-body">
-    <h5 class="card-title">obat apa yang baik untuk tanaman sekarat?</h5>
+    <h5 class="card-title">{{$key->pertanyaan}}</h5>
     <p class="card-text">
-    <textarea id="" name="" rows="4" cols="50" class="textareajawab" placeholder="Silahkan isi sepengetahuan anda"></textarea>
-<a href="{{url('/nilai')}}"><button class="btn btn-primary btn-md">Submit</button></a>
+    <textarea id="jawaban" name="jawaban" rows="4" cols="50" class="textareajawab" placeholder="Silahkan isi sepengetahuan anda"></textarea>
+<a href="{{url('/submit')}}"><button class="btn btn-primary btn-md">Submit</button></a>
 @endsection
