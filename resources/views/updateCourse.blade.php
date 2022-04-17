@@ -1,5 +1,3 @@
-
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -49,35 +47,33 @@
                         </div>
                     </div>
                 </nav>
+
                 <!-- Page content -->
-                <br>
-                <a class="btn btn-info" href="{{ url('tambahCourse') }}">Add Course</a>
-                <br>
-                <table class="table-bordered table">
-                  <tr>
-                    <th>Nama Course</th>
-                    <th>Harga Course</th>
-                    <th>Perkiraan Waktu Belajar Course</th>
-                    <th>Tanggal Buat </th>
-                    <th colspan="2">Action</th>
-                  </tr>
-                  @foreach ($datas as $key=>$value)
-                      <tr>
-                          <td>{{ $value->nama_course}}</td>
-                          <td>{{ $value->harga_course}}</td>
-                          <td>{{ $value->perkiraan_waktu}}</td>
-                          <td>{{ $value->tgl_dibuat}}</td>
-                          <td><a class="btn btn-info" href="{{ url('course/'.$value->id.'/edit') }}">Update</a></td>
-                          <td>
-                              <form action="{{ url('course/'.$value->id) }}" method="POST">
-                                  @csrf
-                                  <input type="hidden" name="_method" value="DELETE">
-                                  <button class="btn btn-danger" type="submit">Delete</button>
-                              </form>
-                          </td>
-                      </tr>
-                  @endforeach
-                </table>
+                <div class="container-fluid">
+                    <h1 class="mt-4">Dashboard Admin</h1> <!-- style="width: 30rem;" -->
+                    <div>
+                    <form action="{{ url('course/'.$model->id) }}" method="POST" >
+                        @csrf
+                        <input type="hidden" name="_method" value="PATCH">
+                        <div class="form-group">
+                            <label>Nama Course</label>
+                            <input type="text" class="form-control" name="nama_course" value="{{ $model->nama_course }}">
+                        </div><div class="form-group">
+                            <label>Harga Course</label>
+                            <input type="text" class="form-control" name="harga_course" value="{{ $model->harga_course }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Perkiraan Waktu Belajar</label>
+                            <input type="text" class="form-control" name="perkiraan_waktu" value="{{ $model->perkiraan_waktu }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Tanggal</label>
+                            <input type="date" class="form-control" name="tgl_dibuat" value="{{ $model->tgl_dibuat }}">
+                        </div><br/>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Bootstrap core JS-->

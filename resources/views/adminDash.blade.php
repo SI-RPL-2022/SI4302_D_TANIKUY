@@ -57,7 +57,7 @@
                             <img src="image/dashboardadmin-1.png" style="float: left">
                           <h5 class="card-title" style="text-align: right">54</h5>
                           <p class="card-text" style="text-align: right">Courses</p>
-                          <a href="#" class="card-footer btn" style="float: right;"><img src="image/add.png" width="15%">Add Courses</a>
+                          <a href="tambahCourse" class="card-footer btn" style="float: right;"><img src="image/add.png" width="15%">Add Courses</a>
                         </div>
                     </div>
 

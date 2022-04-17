@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +35,15 @@ Route::get('/ojanmain', function(){
     return view('ojanmain');
 });
 
-Route::get('/addCourse', function(){
+Route::get('/tambahCourse', function(){
     return view('tambahcourse');
 });
 
-Route::get('/editCourse', function(){
+/*Route::get('/editCourse', function(){
     return view('editcourse');
-});
+});*/
+
+Route::resource('course', CourseController::class);
+
+Route::get('editCourse', [CourseController::class, 'index']);
+/*Route::get('editCourse/{id}', [CourseController::class, ]) */

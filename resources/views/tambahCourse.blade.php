@@ -1,5 +1,3 @@
-
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -53,7 +51,28 @@
                 <!-- Page content -->
                 <div class="container-fluid">
                     <h1 class="mt-4">Dashboard Admin</h1> <!-- style="width: 30rem;" -->
-
+                    <div>
+                    <form action="{{ url('course') }}" method="POST" >
+                        @csrf
+                        <div class="form-group">
+                            <label>Nama Course</label>
+                            <input type="text" class="form-control" name="nama_course" placeholder="Masukkan Nama Course!">
+                        </div>
+                        <div class="form-group">
+                            <label>Harga Course</label>
+                            <input type="text" class="form-control" name="harga_course" placeholder="Masukkan Harga Course!">
+                        </div>
+                        <div class="form-group">
+                            <label>Perkiraan Waktu Belajar</label>
+                            <input type="text" class="form-control" name="perkiraan_waktu" placeholder="Masukkan Perkiraan Waktu Belajar Course!">
+                        </div>
+                        <div class="form-group">
+                            <label>Tanggal</label>
+                            <input type="date" class="form-control" name="tgl_dibuat">
+                        </div><br/>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    </div>
                 </div>
             </div>
         </div>
