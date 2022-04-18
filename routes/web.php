@@ -53,8 +53,8 @@ Route::get('/register', function () {
 Route::get('/buy_course', function () {
     return view('buy_course');
 });
-Route::get('/course', function () {
-    return view('course');
+Route::get('/kelas', function () {
+    return view('kelas');
 });
 Route::get('ADMINpaymentVerif', function () {
     return view('ADMINpaymentVerif');
@@ -117,3 +117,4 @@ Route::resource('course', CourseController::class);
 Route::get('editCourse', [CourseController::class, 'index']);
 /*Route::get('editCourse/{id}', [CourseController::class, ]) */
 
+Route::get('/buy_course', [CourseController::class, 'showCourse']);
