@@ -60,7 +60,7 @@
                             <input type="text" class="form-control" name="nama_course" value="{{ $model->nama_course }}">
                         </div><div class="form-group">
                             <label>Harga Course</label>
-                            <input type="text" class="form-control" name="harga_course" value="{{ $model->harga_course }}">
+                            <input type="number" class="form-control" name="harga_course" value="{{ $model->harga_course }}">
                         </div>
                         <div class="form-group">
                             <label>Perkiraan Waktu Belajar</label>

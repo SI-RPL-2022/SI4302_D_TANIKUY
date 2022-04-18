@@ -60,7 +60,7 @@
                         </div>
                         <div class="form-group">
                             <label>Harga Course</label>
-                            <input type="text" class="form-control" name="harga_course" placeholder="Masukkan Harga Course!">
+                            <input type="number" class="form-control" name="harga_course" placeholder="Masukkan Harga Course!">
                         </div>
                         <div class="form-group">
                             <label>Perkiraan Waktu Belajar</label>
