@@ -8,7 +8,7 @@
 <div class="wrapper">
 	<div class="navbar">
 		<div class="logo">
-			<image src="image/logo.png" width="50%">
+			<image src="{{ asset('image/logo.png') }}" width="50%">
 		</div>
 		<ul class="flex" style="margin-right: 10%">
 			<li class="px-4 py-2">Home</li>
@@ -21,7 +21,9 @@
 			<ul>
 				<li class="nr_li dd_main">
 
+
 					<img src="image/img_avatar.png" alt="profile_img">
+					
 
 					<div class="dd_menu">
 						<div class="dd_left">

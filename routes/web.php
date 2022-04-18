@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\AssessmentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +18,28 @@ use App\Http\Controllers\CourseController;
 |
 */
 
-Route::get('/tugas', function () {
-    return view('tugas');
+
+Route::get('/tugas', [AssessmentController::class, 'indextugas']);
+
+
+Route::get('/soal/{id}', [AssessmentController::class, 'indexsoal']);
+Route::post('/soal', [AssessmentController::class, 'storejawaban']);
+
+Route::get('/submit', function () {
+    return view('submit');
 });
 
-Route::get('/soal', function () {
-    return view('soal');
-});
+Route::get('/listsoal', [AssessmentController::class, 'index']);
+Route::post('/editsoal/{id}', [AssessmentController::class, 'index2']);
+Route::post('/editsoal2/{id}', [AssessmentController::class, 'update']);
+Route::get('/buatsoal', [AssessmentController::class, 'create']);
+Route::post('/buatsoal', [AssessmentController::class, 'store']);
+Route::get('/listsoal2/{id}', [AssessmentController::class, 'delete']);
 
-Route::get('/nilai', function () {
-    return view('nilai');
-});
+
+
+
+
 
 Route::get('/', function () {
     return view('landingpage');
@@ -79,6 +94,7 @@ Auth::routes();
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin.home')->middleware('is_admin');
 Route::get('siswa/home', [App\Http\Controllers\HomeController::class, 'siswa'])->name('siswa.home')->middleware('is_siswa');
 
+
 Route::get('/adminDash', function(){
     return view('adminDash');
 });
@@ -100,3 +116,4 @@ Route::resource('course', CourseController::class);
 
 Route::get('editCourse', [CourseController::class, 'index']);
 /*Route::get('editCourse/{id}', [CourseController::class, ]) */
+
