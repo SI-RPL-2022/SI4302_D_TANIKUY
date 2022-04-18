@@ -53,9 +53,10 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showCourse()
     {
-        //
+            $datas = course::all();
+            return view('buy_course', compact ('datas'));
     }
 
     /**

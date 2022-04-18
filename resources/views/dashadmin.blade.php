@@ -39,10 +39,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="image/profile.png"></a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#!">Action</a>
-                                        <a class="dropdown-item" href="#!">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#!">Something else here</a>
+                                        <a class="dropdown-item" href="#!">Keluar</a>
                                     </div>
                                 </li>
                             </ul>
@@ -56,17 +53,15 @@
                     <div class="card" style="width: 13rem;">
                         <div class="card-body" style="background-color: #deaa7b">
                             <img src="image/dashboardadmin-1.png" style="float: left">
-                          <h5 class="card-title" style="text-align: right">54</h5>
-                          <p class="card-text" style="text-align: right">Courses</p>
-                          <a href="tambahCourse" class="card-footer btn" style="float: right;"><img src="image/add.png" width="15%">Add Courses</a>
+                            <p class="card-text" style="text-align: right">Courses</p>
+                            <a href="tambahCourse" class="card-footer btn" style="float: right;"><img src="image/add.png" width="15%">Add Courses</a>
                         </div>
                     </div>
                     <div class="card" style="width: 13rem;">
                         <div class="card-body" style="background-color: #deaa7b">
                             <img src="image/dashboardadmin-1.png" style="float: left">
-                          <h5 class="card-title" style="text-align: right">30</h5>
-                          <p class="card-text" style="text-align: right">Package</p>
-                          <a href="tambahPaket" class="card-footer btn" style="float: right;"><img src="image/add.png" width="15%">Add Package</a>
+                            <p class="card-text" style="text-align: right">Package</p>
+                            <a href="tambahPaket" class="card-footer btn" style="float: right;"><img src="image/add.png" width="15%">Add Package</a>
                         </div>
                     </div>
 

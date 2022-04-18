@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\PaketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,23 @@ use App\Http\Controllers\CourseController;
 |
 */
 
-Route::get('/tugas', function () {
-    return view('tugas');
+Route::get('/tugas', [AssessmentController::class, 'indextugas']);
+
+
+Route::get('/soal/{id}', [AssessmentController::class, 'indexsoal']);
+Route::post('/soal', [AssessmentController::class, 'storejawaban']);
+
+Route::get('/submit', function () {
+    return view('submit');
 });
 
-Route::get('/soal', function () {
-    return view('soal');
-});
+Route::get('/listsoal', [AssessmentController::class, 'index']);
+Route::post('/editsoal/{id}', [AssessmentController::class, 'index2']);
+Route::post('/editsoal2/{id}', [AssessmentController::class, 'update']);
+Route::get('/buatsoal', [AssessmentController::class, 'create']);
+Route::post('/buatsoal', [AssessmentController::class, 'store']);
+Route::get('/listsoal2/{id}', [AssessmentController::class, 'delete']);
+
 
 Route::get('/nilai', function () {
     return view('nilai');
@@ -53,9 +64,7 @@ Route::get('payment', function () {
 Route::get('riwayatBeli', function () {
     return view('riwayatBeli');
 });
-Route::get('/paket', function () {
-    return view('paket');
-});
+
 Route::get('/pilihpaket', function () {
     return view('pilihpaket');
 });
@@ -65,15 +74,14 @@ Route::get('/paketadmin', function () {
 Route::get('/dashadmin', function () {
     return view('dashadmin');
 });
-Route::get('/tambahPaket', function () {
-    return view('tambahPaket');
-});
-Route::get('/editPaket', function () {
-    return view('editPaket');
-});
 
-
-
+//paket
+Route::get('/tambahPaket',[App\Http\Controllers\PaketController::class, 'create']);
+Route::post('/postPaket',[App\Http\Controllers\PaketController::class, 'store'])->name('post.paket');
+Route::get('/editPaket/{id_paket}',[App\Http\Controllers\PaketController::class, 'edit']);
+Route::post('/updatePaket/{id_paket}',[App\Http\Controllers\PaketController::class, 'update']);
+Route::get('/deletePaket/{id_paket}',[App\Http\Controllers\PaketController::class, 'destroy']);
+Route::get('/paket',[App\Http\Controllers\PaketController::class, 'show']);
 Auth::routes();
 
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin.home')->middleware('is_admin');
@@ -100,3 +108,5 @@ Route::resource('course', CourseController::class);
 
 Route::get('editCourse', [CourseController::class, 'index']);
 /*Route::get('editCourse/{id}', [CourseController::class, ]) */
+
+//cania

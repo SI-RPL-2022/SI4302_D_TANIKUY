@@ -53,31 +53,24 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Dashboard Admin</h1> <!-- style="width: 30rem;" -->
                     <div>
-                    <form action="" method="POST" >
+                    <form action="{{ route('post.paket') }}" method="POST" enctype="multipart/form-data" >
                         @csrf
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="type">Nama Paket</label>
-                                <select class="form-control" id="type" name="tipePaket" required>
-                                    <option value="STANDARD">FREE</option>
-                                    <option value="PREMIUM">PREMIUM</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="type">List Course</label>
-                                <select class="form-control" id="type" name="namaCourse" required>
-                                    <option value="STANDARD">PERTANIAN</option>
-                                    <option value="PREMIUM">PERKEBUNAN</option>
-                                    <option value="EXECUTIVE">PERMUSYAWARATAN</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Harga Paket</label>
-                                <input type="text" class="form-control" name="hargaPaket" placeholder="Masukkan Harga Paket">
-                            </div>
-                        <br>
+                        <label>Nama Paket</label>
+                        <select class="form-select" aria-label="Default select example" name="nama_paket">
+                            <option value="Free">Free</option>
+                            <option value="Premium">Premium</option>
+                        </select>
+                        <label>List Course</label>
+                        <select multiple="" class="form-select" name="nama_course[]">
+                            @foreach($mod as $mods)
+                            <option value="{{ $mods->nama_course }}">{{ $mods->nama_course }}</option>
+                            @endforeach
+                        </select>
+                        <div class="form-group">
+                            <label>Harga Paket</label>
+                            <input type="text" class="form-control" name="harga_paket" placeholder="Harga Paket">
+                        </div><br/>
                         <button type="submit" class="btn btn-primary">Save</button>
-</div>
                     </form>
                     </div>
                 </div>
