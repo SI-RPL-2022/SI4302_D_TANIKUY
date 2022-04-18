@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +58,25 @@ Auth::routes();
 
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin.home')->middleware('is_admin');
 Route::get('siswa/home', [App\Http\Controllers\HomeController::class, 'siswa'])->name('siswa.home')->middleware('is_siswa');
-  
+
+Route::get('/adminDash', function(){
+    return view('adminDash');
+});
+
+/* NYOBA */
+Route::get('/ojanmain', function(){
+    return view('ojanmain');
+});
+
+Route::get('/tambahCourse', function(){
+    return view('tambahcourse');
+});
+
+/*Route::get('/editCourse', function(){
+    return view('editcourse');
+});*/
+
+Route::resource('course', CourseController::class);
+
+Route::get('editCourse', [CourseController::class, 'index']);
+/*Route::get('editCourse/{id}', [CourseController::class, ]) */

@@ -1583,7 +1583,11 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/thephpleague/flysystem/tree/3.0.14"
+=======
+                "source": "https://github.com/thephpleague/flysystem/tree/3.0.13"
+>>>>>>> PBI2
             },
             "funding": [
                 {
@@ -1599,7 +1603,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-04-06T18:17:37+00:00"
+=======
+            "time": "2022-04-02T08:55:13+00:00"
+>>>>>>> PBI2
         },
         {
             "name": "league/mime-type-detection",

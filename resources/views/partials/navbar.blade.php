@@ -5,7 +5,7 @@
 		<div class="logo">
 			<image src="image/logo.png" width="50%">
 		</div>
-		<ul class="flex" style="margin-right: 40%">
+		<ul class="flex" style="margin-right: 10%">
 			<li class="px-4 py-2">Home</li>
 			<li class="px-4 py-2">Paket</li>
 			<li class="px-4 py-2">Course</li>
@@ -17,14 +17,14 @@
 				<li class="nr_li dd_main">
 
 					<img src="image/img_avatar.png" alt="profile_img">
-					
+
 					<div class="dd_menu">
 						<div class="dd_left">
 							<ul>
 								<li><i class="far fa-star"></i></li>
 								<li><i class="fas fa-cog"></i></li>
 								<li><i class="fas fa-sign-out-alt"></i></li>
-							</ul>	
+							</ul>
 						</div>
 						<div class="dd_right">
 							<ul>
@@ -35,7 +35,7 @@
 						</div>
 					</div>
 				</li>
-				<li style="color: black;padding-left: 10px"><span><b>V</b></span></li>
+				<li style="color: black;padding-left: 5px"><span><b>V</b></span></li>
 			</ul>
 		</div>
 	</div>
