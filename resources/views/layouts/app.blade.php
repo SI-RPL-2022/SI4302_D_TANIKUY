@@ -84,6 +84,7 @@
         </head>
         <a type="submit" href="{{ url('/')}}" class="btn btn-lg" style="margin-top:35px; margin-left:15px;"><i class="fa-solid fa-chevron-left fa-2xl"  style="color:white;"></i></a>
     <body id="example2" style="background-image:url('image/tanikuyblur.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+    
             @yield('content')
         </main>
     </div>
