@@ -6,11 +6,13 @@
 			<image src="{{ asset('image/logo.png') }}" width="50%">
 		</div>
 		<ul class="flex" style="margin-right: 40%">
-			<li class="px-4 py-2">Home</li>
-			<li class="px-4 py-2">Paket</li>
-			<li class="px-4 py-2">Course</li>
+			<li class="px-4 py-2"><a href="paket">Home</a></li>
+			<li class="px-4 py-2"><a href="paket">Paket</a></li>
+			<li class="px-4 py-2"><a href="buy_course">Course</a></li>
 			<li class="px-4 py-2">Forum</li>
 			<li class="px-4 py-2">Blog</li>
+			<li class="px-4 py-2"><a href="tugas">Latihan Soal</a></li>
+
 		</ul>
 		<div class="nav_right">
 			<ul>

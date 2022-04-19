@@ -9,6 +9,7 @@
             <h5 class="card-title" style="font-family: Times New Roman; font-size: 25px;">Rp. {{ $mods->harga_paket}}</h5>
             <a href="pilihpaket" type="button" class="btn btn-outline-success" style='width: 50%; margin: 5% 0 5% 25%;'>Get Started</a>
             <ul class="list-group list-group-flush">
+                <li>Paket Terdiri Dari Course : </li>
                 <li class="list-group-item">{{ $mods->nama_course}}</li>
             </ul>
         </div>
