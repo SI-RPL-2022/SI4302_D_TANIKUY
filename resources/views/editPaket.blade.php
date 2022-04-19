@@ -18,10 +18,10 @@
                 <div class="sidebar-heading border-bottom" style="background-color: #deaa7b"><img src="image/logotani.png"></div>
                 <div style="background-color: #c5a67c" class="list-group list-group-flush" >
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="dashadmin">Dashboard</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Courses</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="tambahCourse">Courses</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="tambahPaket">Package</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Assesment</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Blogs</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="tambahPaket">Package</a>
                 </div>
             </div>
             <!-- Page content wrapper-->
@@ -40,9 +40,6 @@
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="image/profile.png"></a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="#!">Action</a>
-                                        <a class="dropdown-item" href="#!">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#!">Something else here</a>
                                     </div>
                                 </li>
                             </ul>
