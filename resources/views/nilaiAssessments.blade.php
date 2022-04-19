@@ -5,7 +5,7 @@
     <div class="container py-3">
     <header class="pb-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-        <span class="fs-2">RIWAYAT PEMBELIAN</span>
+        <span class="fs-2">Riwayat Nilai Assessment</span>
       </a>
     </header>
     
@@ -58,21 +58,29 @@
                 <thead>
                   <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Nama Course</th>
-                    <th scope="col">Tanggal Beli</th>
-                    <th scope="col">Perkiraan Waktu</th>
-                    <th scope="col">Harga</th>
+                    <th scope="col">Nama Assessment</th>
+                    <th scope="col">Deskripsi Jawaban</th>
+                    <th scope="col">Tanggal Assessment</th>
+                    <th scope="col">Nilai</th>
+                    <th scope="col">Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php $no = 1; ?>
-                  @foreach($data as $datas)
+                  @foreach($assessment as $assessments)
                   <tr>
-                    <th scope="row">{{ $no++ }}</th>
-                    <td>{{ $datas->nama_course }}</td>
-                    <td>{{ $datas->created_at }}</td>
-                    <td>{{ $datas->perkiraan_waktu }}</td>
-                    <td>{{ $datas->harga_course }}</td>
+                    <td>{{ $no++ }}</td>
+                    <td>{{ $assessments->nama_ass }}</td>
+                    <td>{{ $assessments->deskripsi_jawaban }}</td>
+                    <td>{{ $assessments->created_at }}</td>
+                    <td><b>{{ $assessments->nilai }}</b> / 100</td>
+                    <td>
+                      @if($assessments->status == "Menunggu Review")
+                        <span class="badge bg-warning">{{ $assessments->status }}</span>
+                      @elseif($assessments->status == "Selesai Review")
+                        <span class="badge bg-success">{{ $assessments->status }}</span>
+                      @endif
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>

@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jawabans', function (Blueprint $table) {
-            $table->id('id_jawaban');
-            $table->bigInteger('id_assessments')->unsigned();
-            $table->foreign('id_assessments')->references('id_assessments')->on('assessments')->onUpdate('cascade')->onDelete('cascade');        
+        Schema::create('transaksi_course', function (Blueprint $table) {
+            $table->id('id_transaksi_course');
+            $table->bigInteger('id_course')->unsigned();
+            $table->foreign('id_course')->references('id_course')->on('course')->onUpdate('cascade')->onDelete('cascade');
             $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->text('deskripsi_jawaban');
-            $table->text('status');
-            $table->text('nilai')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jawabans');
+        Schema::dropIfExists('transaksi_course');
     }
 };

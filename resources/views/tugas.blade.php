@@ -12,11 +12,11 @@
 	@foreach($assessment as $row)
 	<div class="container d-flex justify-content-start" style="padding-left: 5%">
 	<div class="card" style="">
-	  <img src="image/essay.png" alt="image" style="width:500px">
+	  <img src="{{ asset('image/essay.png') }}" alt="image" style="width:500px">
 	  <div class="cardcontainer" style="">
 	    <h4 class="mb-2"><b>{{$row->nama_ass}}</b></h4> 
 	    <p class="mb-2"><i class="bi bi-bookmark"></i>{{$row->deskripsi}}</p>
-	    <a href="/soal/{{$row->id}}"><button class="btn btn-primary btn-block w-20" style="">Mulai</button></a>
+	    <a href="{{ url('siswa/soal/'.$row->id_assessments) }}"><button class="btn btn-primary btn-block w-20" style="">Mulai</button></a>
 	  </div>
 	</div>
 	@endforeach

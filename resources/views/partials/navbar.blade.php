@@ -18,7 +18,11 @@
 			<ul>
 				<li class="nr_li dd_main">
 
-					<img src="{{ asset('image/img_avatar.png') }}" alt="profile_img">
+					<!-- <img src="{{ asset('image/img_avatar.png') }}" alt="profile_img"> -->
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
 					
 					<div class="dd_menu">
 						<div class="dd_left">

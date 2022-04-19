@@ -3,11 +3,15 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom" style="background-color: #deaa7b"><img src="{{ asset('image/logo resize-1.png') }}"></div>
                 <div style="background-color: #c5a67c" class="list-group list-group-flush" >
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="buy_course">Courses</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="tambahPaket">Package</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="listsoal">Assesment</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Blogs</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('admin.home') }}">Dashboard</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('admin.editCourse') }}">Courses</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('admin.editPaket') }}">Package</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('admin.liatsoal') }}">Assesment</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('admin.assessment') }}">Review Assesment</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </div>
             <!-- Page content wrapper-->

@@ -7,13 +7,13 @@
 
 <div class="card" style="width: 40%; margin-bottom: 5px;">
   <div class="card-body">
-  	<form action="{{url('/soal')}}" method="POST">
+  	<form action="{{ url('siswa/soal/store') }}" method="POST">
   	@csrf
-  	<input type="hidden" name="assessments_id" value="{{$assessment->id}}">
-    <h5 class="card-title">{{$assessment->soal}}</h5>
-    <input type="hidden" name="soal" value="{{$assessment->soal}}">
-    <textarea id="jawaban" name="jawaban" rows="4" cols="50" class="textareajawab" placeholder="Silahkan isi sepengetahuan anda"></textarea>
-	<a href="{{url('/submit')}}"><button class="btn btn-primary btn-md">Submit</button></a>
+  	<input type="hidden" name="id_assessments" value="{{$assessment->id_assessments}}">
+    <input type="hidden" name="id_user" value="{{Auth::user()->id}}">
+    <h5 class="card-title">{{$assessment->soal}}</h5>    
+    <textarea id="jawaban" name="deskripsi_jawaban" rows="4" cols="50" class="textareajawab" placeholder="Silahkan isi sepengetahuan anda"></textarea>
+	  <button type="submit" class="btn btn-primary btn-md">Submit</button>
 	</form>
   </div>
 </div>

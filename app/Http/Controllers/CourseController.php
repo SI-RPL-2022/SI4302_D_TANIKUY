@@ -7,6 +7,10 @@ use App\Models\Course;
 
 class CourseController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -44,19 +48,7 @@ class CourseController extends Controller
         $model->perkiraan_waktu=$request->perkiraan_waktu;
         $model->tgl_dibuat=$request->tgl_dibuat;
         $model->save();
-        return redirect('editCourse');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function showCourse()
-    {
-            $datas = course::all();
-            return view('buy_course', compact ('datas'));
+        return redirect('admin/editCourse');
     }
 
     /**
@@ -78,15 +70,15 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_course)
     {
-        $model = course::find($id);
+        $model = course::find($id_course);
         $model->nama_course=$request->nama_course;
         $model->harga_course= $request->harga_course;
         $model->perkiraan_waktu=$request->perkiraan_waktu;
         $model->tgl_dibuat=$request->tgl_dibuat;
         $model->save();
-        return redirect('editCourse');
+        return redirect('admin/editCourse');
     }
 
     /**
@@ -99,6 +91,7 @@ class CourseController extends Controller
     {
         $model = course::find($id);
         $model->delete();
-        return redirect('editCourse');
+        return redirect('admin/editCourse');
     }
 }
+

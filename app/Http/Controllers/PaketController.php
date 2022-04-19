@@ -47,7 +47,7 @@ class PaketController extends Controller
         $mod->harga_paket= $request->harga_paket;                
 
         $mod->save();
-        return redirect('editPaket');
+        return redirect('admin/editPaket');
     }
 
 
@@ -94,7 +94,7 @@ class PaketController extends Controller
         }        
         $mod->harga_paket=$request->harga_paket;
         $mod->save();
-        return redirect('editPaket');
+        return redirect('admin/editPaket');
     }
 
     /**
@@ -108,6 +108,6 @@ class PaketController extends Controller
         //
         $mod = Paket::find($id_paket);
         $mod->delete();
-        return redirect('editPaket');
+        return redirect('admin/editPaket');
     }
 }

@@ -10,9 +10,8 @@
         <div class="h-100 p-3 text-white rounded-3" style="background: #579924">
           <ul class="list-unstyled ps-0">
               <li class="mb-1 ">
-                <button class="btn btn-toggle align-items-center rounded collapsed text-light" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                  COURSE
-                </button>
+                <a class="btn btn-toggle align-items-center rounded collapsed text-light" href="{{ route('siswa.buy.course') }}" > Course
+                </a>
                 <div class="collapse show" id="home-collapse">
                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li><a href="#" class="link-light rounded">Overview</a></li>
@@ -22,14 +21,14 @@
                 </div>
               </li>
               <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed text-light" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                  EBOOK
-                </button>
+                <a class="btn btn-toggle align-items-center rounded collapsed text-light" href="{{ url('siswa/tugas') }}">
+                  Assesment
+                </a>
               </li>
               <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed text-light" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                  Orders
-                </button>
+                <a class="btn btn-toggle align-items-center rounded collapsed text-light" href="{{ url('siswa/tugas/jawaban') }}">
+                  Hasil Assessment
+                </a>
               </li>
               <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded collapsed text-light" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
@@ -49,7 +48,7 @@
 
       <div class="col-md-9">
         <div class="h-100 p-5 bg-light border rounded-3">
-          <div class="row row-cols-1 row-cols-md-3 g-3">
+          <div class="row row-cols-1 row-cols-md-4 g-4">
             @foreach($datas as $row)
             <div class="col-3">
               <div class="card" style="width: 15rem;">
@@ -60,11 +59,16 @@
                   <p class="card-text" style="color: #808080"><small>{{$row->perkiraan_waktu}}</small></p>                
                 </div>
                 <div class="card-footer">
-                  <a href="riwayatBeli" class="btn btn-primary float-right" type="submit">Beli</a>
+                  <form action="{{ route('siswa.store.transaction.course') }}" method="post">
+                    @csrf
+                    <input type="text" name="id_user" value="{{ Auth::user()->id }}" hidden>
+                    <input type="text" name="id_course" value="{{ $row->id_course }}" hidden>
+                    <button type="submit" class="btn btn-primary float-right">Beli</button>
+                  </form>                  
                 </div>
-                </div>
-                </div>
-            
+              </div>
+            </div>     
+            @endforeach       
             <!-- <div class="col-3">
               <div class="card" style="width: 15rem;">
                 <img src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" class="card-img-top" alt="...">
@@ -90,7 +94,7 @@
                 <a href="riwayatBeli" class="btn btn-primary float-right" type="submit">Beli</a>
               </div>
             </div> -->
-            @endforeach
+           
           </div>
         </div>
         </div>

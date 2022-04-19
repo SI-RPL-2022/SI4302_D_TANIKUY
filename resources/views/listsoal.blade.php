@@ -24,23 +24,17 @@
                         <td>{{$key->deskripsi}}</td>
                         <td>{{$key->soal}}</td>
                         <td>
-                            <form action="/editsoal/{{$key->id}}" method="POST">
+                            <form action="/editsoal/{{$key->id_assessments}}" method="POST">
                             @csrf
                                 <button type="submit" class="btn btn-outline-warning">EDIT</button>
                             </form>
                         </td>
                         <td>
-                        	<form action="/listsoal2/{{$key->id}}" method="delete">
+                        	<form action="/listsoal2/{{$key->id_assessments}}" method="delete">
                             @csrf @method('DELETE')
                         	<button type="submit" class="btn btn-outline-danger">DELETE</button>
                             </form>
-                        </td>
-                        <td>
-                            <form action="/jawabanuser/{{$key->id}}" method="POST">
-                            @csrf 
-                            <button type="submit" class="btn btn-outline-primary">VIEW</button>
-                            </form>
-                        </td>
+                        </td>                        
                     </tr> 
                     @php
                     $num++;

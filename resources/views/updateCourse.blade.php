@@ -50,7 +50,7 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Dashboard Admin</h1> <!-- style="width: 30rem;" -->
                     <div>
-                    <form action="{{ url('course/'.$model->id) }}" method="POST" >
+                    <form action="{{ url('course/'.$model->id_course) }}" method="POST" >
                         @csrf
                         <input type="hidden" name="_method" value="PATCH">
                         <div class="form-group">

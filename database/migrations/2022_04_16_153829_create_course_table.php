@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('course', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama_course',10);
+            $table->id('id_course');
+            $table->string('nama_course');
             $table->string('harga_course',10);
             $table->string('perkiraan_waktu',10);
             $table->date('tgl_dibuat');

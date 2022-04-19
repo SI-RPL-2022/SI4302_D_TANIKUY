@@ -4,7 +4,7 @@
                     <div class="container d-flex justify-content-center" style='margin-top: 20px;'>
 
                     <div class="card" style="width: 40%; margin-bottom: 5px;">
-                    <form action="/editsoal2/{{$assessment->id}}" method="POST">
+                    <form action="/editsoal2/{{$assessment->id_assessments}}" method="POST">
                     @csrf
                     <div class="card-body">
                         <h3>Edit Assessment</h3>
