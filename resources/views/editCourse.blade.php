@@ -20,7 +20,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Courses</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="tambahPaket">Package</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Assesment</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="listsoal">Assesment</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Blogs</a>
                 </div>
             </div>
