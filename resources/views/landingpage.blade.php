@@ -17,6 +17,7 @@
             <img src="/image/logotani.png" alt="" width="120" height="45" class="d-inline-block align-text-top" style="margin-left:25px;">
             </a>
             <ul class="nav justify-content-end">
+                @guest 
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-brands fa-whatsapp fa-2xl" style="margin-top: 10px; color:green;"></i></a>
                 </li>
@@ -32,6 +33,29 @@
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold" href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color:black; margin-top: 10px;"></i></a>
                 </li>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-brands fa-whatsapp fa-2xl" style="margin-top: 10px; color:green;"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:black;">Hubungi kami</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:black;">{{Auth::user()->name}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" 
+                                                     style="color:black;">Logout</a>
+                </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+                </form>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color:black; margin-top: 10px;"></i></a>
+                </li>
+                @endguest
             </ul>
         </div>
         </nav>

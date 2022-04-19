@@ -9,16 +9,7 @@ use Illuminate\Http\Request;
     
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+
 
     use AuthenticatesUsers;
 
@@ -48,9 +39,9 @@ class LoginController extends Controller
 
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))){
             if(auth()->user()->is_admin == 1){
-                return redirect()->route('admin.home');
+                return redirect()->route('dashadmin');
             }else{
-                return redirect()->route('siswa.home');
+                return redirect()->route('landingpage');
             }
         }else{
             return redirect()->route('login')->with('error', 'Email Dan Password Salah');
