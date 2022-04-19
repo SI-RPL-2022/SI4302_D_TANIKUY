@@ -67,6 +67,7 @@
                             <label>Harga Paket</label>
                             <input type="text" class="form-control" name="harga_paket" placeholder="Harga Paket">
                         </div><br/>
+
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
                     </div>

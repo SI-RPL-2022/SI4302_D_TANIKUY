@@ -65,9 +65,9 @@
         <h1 class="text-center" style="color:white;">INDONESIA!</h1>
         </div>
         <div align="center" style="margin-top:25px;">
-        <button type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Paket</button>
-        <button type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Course</button>
-        <button type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Blog</button>
+        <a href="paket" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Paket</a>
+        <a href="tambahCourse" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Course</button>
+        <a href="" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Blog</a>
         </div>
     </body>
 </html>

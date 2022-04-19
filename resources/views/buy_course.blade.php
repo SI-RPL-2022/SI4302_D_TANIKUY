@@ -46,13 +46,14 @@
         </div>
       </div>
 
-      @foreach($datas as $row)
+
       <div class="col-md-9">
         <div class="h-100 p-5 bg-light border rounded-3">
           <div class="row row-cols-1 row-cols-md-3 g-3">
+            @foreach($datas as $row)
             <div class="col-3">
               <div class="card" style="width: 15rem;">
-                <img src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" class="card-img-top" alt="">
+                <img src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" class="card-img-top" alt="">   
                 <div class="card-body">
                   <h5 class="card-title">{{$row->nama_course}}</h5>
                   <p class="card-text" style="color: #808080"><small>{{$row->harga_course}}</small></p>
@@ -61,8 +62,8 @@
                 <div class="card-footer">
                   <a href="riwayatBeli" class="btn btn-primary float-right" type="submit">Beli</a>
                 </div>
-              </div>
-            </div>
+                </div>
+                </div>
             
             <!-- <div class="col-3">
               <div class="card" style="width: 15rem;">
@@ -89,18 +90,17 @@
                 <a href="riwayatBeli" class="btn btn-primary float-right" type="submit">Beli</a>
               </div>
             </div> -->
-            
+            @endforeach
           </div>
         </div>
         </div>
       </div>
-      @endforeach
+      
     </div>
   </div>
 </div>
 
     <footer class="pt-3 mt-4 text-muted border-top">
-      &copy; 2021
     </footer>
   </div>
 </div>

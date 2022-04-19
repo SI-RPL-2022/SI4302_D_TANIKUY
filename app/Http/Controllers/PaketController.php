@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class PaketController extends Controller
      */
     public function index()
     {
-        $datap = paket::all();
+        $datap = Paket::all();
 
         return view('editPaket', compact('datap'));
     }
@@ -40,8 +41,7 @@ class PaketController extends Controller
     public function store(Request $request)
     {        
         $nama_course = implode(',', $request->nama_course);
-        
-        $mod = new paket;
+        $mod = new Paket;
         $mod->nama_paket=$request->nama_paket;
         $mod->nama_course= $nama_course;
         $mod->harga_paket= $request->harga_paket;                
@@ -49,6 +49,7 @@ class PaketController extends Controller
         $mod->save();
         return redirect('editPaket');
     }
+
 
     /**
      * Display the specified resource.
@@ -105,7 +106,7 @@ class PaketController extends Controller
     public function destroy($id_paket)
     {
         //
-        $mod = paket::find($id_paket);
+        $mod = Paket::find($id_paket);
         $mod->delete();
         return redirect('editPaket');
     }
