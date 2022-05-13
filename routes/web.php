@@ -106,6 +106,11 @@ Route::get('siswa/tugas', [AssessmentController::class, 'indextugas'])->middlewa
 Route::get('siswa/soal/{id}', [AssessmentController::class, 'indexsoal'])->middleware('is_siswa');
 Route::post('siswa/soal/store', [AssessmentController::class, 'storejawaban'])->middleware('is_siswa');
 Route::get('siswa/tugas/jawaban', [AssessmentController::class, 'showjawaban'])->middleware('is_siswa');
+Route::get('/userDash', function(){
+    return view('userDash');
+});
+
+
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');
