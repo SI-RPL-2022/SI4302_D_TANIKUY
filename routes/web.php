@@ -126,3 +126,10 @@ Route::get('admin/assessments', [App\Http\Controllers\AssessmentController::clas
 Route::post('admin/assessments/store/{id_jawaban}', [App\Http\Controllers\AssessmentController::class, 'storeNilaiAssessment']);
 Route::resource('course', CourseController::class);
 Route::get('admin/editCourse', [CourseController::class, 'index'])->name('admin.editCourse')->middleware('is_admin');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

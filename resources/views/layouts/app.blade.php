@@ -1,19 +1,22 @@
-<!-- <!doctype html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-
+    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -28,10 +31,14 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
                     </ul>
+
+                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -68,23 +75,7 @@
             </div>
         </nav>
 
-        <main class="py-4"> -->
-<html>
-    <head>
-            <title>
-
-            </title> 
-            <style>
-                .btn-primary {
-                    color: #8E6A4A; 
-                }
-            </style>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">     
-            <script src="https://kit.fontawesome.com/b198f4fad2.js" crossorigin="anonymous"></script>        
-        </head>
-        <a type="submit" href="{{ url('/')}}" class="btn btn-lg" style="margin-top:35px; margin-left:15px;"><i class="fa-solid fa-chevron-left fa-2xl"  style="color:white;"></i></a>
-    <body id="example2" style="background-image:url('image/tanikuyblur.png'); background-repeat: no-repeat; background-size: 100% 100%;">
-    
+        <main class="py-4">
             @yield('content')
         </main>
     </div>
