@@ -63,9 +63,18 @@
       </div>
     </div>
 
-    <footer class="pt-3 mt-4 text-muted border-top">
-      &copy; 2021
-    </footer>
+    <div class="container-fluid py-5">
+        <p class="mt-1 mb-3 fs-3">Review Kelas</p>
+        <a href=""></a>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-title fs-5">Putin</p>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
