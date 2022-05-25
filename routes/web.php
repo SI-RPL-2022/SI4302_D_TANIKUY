@@ -28,14 +28,6 @@ use App\Http\Controllers\AssessmentController;
 Route::get('/submit', function () {
     return view('submit');
 });
-
-
-
-
-
-
-
-
 Route::get('/', function () {
     return view('landingpage');
 })->name('/');
@@ -103,7 +95,6 @@ Route::get('siswa/tugas', [AssessmentController::class, 'indextugas'])->middlewa
 Route::get('siswa/soal/{id}', [AssessmentController::class, 'indexsoal'])->middleware('is_siswa');
 Route::post('siswa/soal/store', [AssessmentController::class, 'storejawaban'])->middleware('is_siswa');
 Route::get('siswa/tugas/jawaban', [AssessmentController::class, 'showjawaban'])->middleware('is_siswa');
-//NEW UPDATE
 Route::get('siswa/buy_course', [TransaksiController::class, 'showCourse'])->name('siswa.buy.course')->middleware('is_siswa');
 Route::post('siswa/store_course', [TransaksiController::class, 'storeTransactionCourse'])->name('siswa.store.transaction.course')->middleware('is_siswa');
 Route::post('siswa/confirm_transaction_course/{id}', [TransaksiController::class, 'confirmTransactionCourse'])->name('siswa.confirm.transaction.course')->middleware('is_siswa');
@@ -114,7 +105,11 @@ Route::post('siswa/store_paket', [TransaksiController::class, 'storeTransactionP
 Route::post('siswa/confirm_transaction_paket/{id}', [TransaksiController::class, 'confirmTransactionpaket'])->middleware('is_siswa');
 Route::get('siswa/mycourse', [App\Http\Controllers\CourseController::class, 'showMyCourse'])->middleware('is_siswa');
 Route::get('siswa/mycourse/{nama_course}/{id_course}/{id_user}', [App\Http\Controllers\CourseController::class, 'showDetailCourse'])->middleware('is_siswa');
-
+Route::get('siswa/mycourse', [App\Http\Controllers\CourseController::class, 'showMyCourse'])->middleware('is_siswa');
+Route::get('siswa/mycourse/{nama_course}/{id_course}/{id_user}', [App\Http\Controllers\CourseController::class, 'showDetailCourse'])->middleware('is_siswa');
+Route::post('siswa/tambahReview', [App\Http\Controllers\CourseController::class, 'tambahReview'])->middleware('is_siswa');
+Route::post('siswa/editReview/{id}', [App\Http\Controllers\CourseController::class, 'editReview'])->middleware('is_siswa');
+Route::get('siswa/hapusReview/{id}', [App\Http\Controllers\CourseController::class, 'hapusReview'])->middleware('is_siswa');
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');

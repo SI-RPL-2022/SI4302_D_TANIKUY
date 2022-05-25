@@ -15,6 +15,7 @@ class Course extends Model
     'harga_course',
     'perkiraan_course',
     'deskripsi_course',
+    'link_video',
     'isi_course'
     ];
 }
