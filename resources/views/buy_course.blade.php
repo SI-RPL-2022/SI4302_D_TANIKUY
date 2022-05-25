@@ -1,112 +1,57 @@
 @extends('layouts.main')
 @section('container')
-<link href="sidebars.css" rel="stylesheet">
-<link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-<div class="container" style="width: 100%; margin-top:2px;">
-  <div class="container py-4">
-    <div class="row align-items-md-stretch">
-      <div class="col-md-3">
-        <div class="h-100 p-3 text-white rounded-3" style="background: #579924">
-          <ul class="list-unstyled ps-0">
-              <li class="mb-1 ">
-                <a class="btn btn-toggle align-items-center rounded collapsed text-light" href="{{ route('siswa.buy.course') }}" > Course
-                </a>
-                <div class="collapse show" id="home-collapse">
-                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-light rounded">Overview</a></li>
-                    <li><a href="#" class="link-light rounded">Updates</a></li>
-                    <li><a href="#" class="link-light rounded">Reports</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="mb-1">
-                <a class="btn btn-toggle align-items-center rounded collapsed text-light" href="{{ url('siswa/tugas') }}">
-                  Assesment
-                </a>
-              </li>
-              <li class="mb-1">
-                <a class="btn btn-toggle align-items-center rounded collapsed text-light" href="{{ url('siswa/tugas/jawaban') }}">
-                  Hasil Assessment
-                </a>
-              </li>
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed text-light" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                  Langganan
-                </button>
-              </li>
-              <li class="border-top my-3"></li>
-                <li class="mb-1">
-                  <button class="btn btn-toggle align-items-center rounded collapsed text-light" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                    My Course
-                  </button>
-                </li>
-          </ul>
-        </div>
+<div class="col-5 col-lg-3 mt-3">
+  <h2 class="fw-bold" style="font-size:35px;">
+    <a href="" style="text-decoration:none; color:#79ed47;">Beli</a> <a href="" style="text-decoration:none; color:rgb(120,120,120);">Course</a> 
+    <hr>
+  </h2>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+  @foreach($datas as $row)
+  <div class="col">
+    <div class="card h-100 rounded">
+      <img src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title fw-bold">{{$row->nama_course}}</h5>
+        <p class="card-text" style="color: #808080"><small>Rp.{{$row->harga_course}} / {{$row->perkiraan_waktu}}</small></p>        
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
-
-
-      <div class="col-md-9">
-        <div class="h-100 p-5 bg-light border rounded-3">
-          <div class="row row-cols-1 row-cols-md-4 g-4">
-            @foreach($datas as $row)
-            <div class="col-3">
-              <div class="card" style="width: 15rem;">
-                <img src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" class="card-img-top" alt="">   
-                <div class="card-body">
-                  <h5 class="card-title">{{$row->nama_course}}</h5>
-                  <p class="card-text" style="color: #808080"><small>{{$row->harga_course}}</small></p>
-                  <p class="card-text" style="color: #808080"><small>{{$row->perkiraan_waktu}}</small></p>                
-                </div>
-                <div class="card-footer">
-                  <form action="{{ route('siswa.store.transaction.course') }}" method="post">
-                    @csrf
-                    <input type="text" name="id_user" value="{{ Auth::user()->id }}" hidden>
-                    <input type="text" name="id_course" value="{{ $row->id_course }}" hidden>
-                    <button type="submit" class="btn btn-primary float-right">Beli</button>
-                  </form>                  
-                </div>
+      <div class="card-footer text-center">        
+        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#belicoure__{{ $row->id_course }}">
+          Beli Sekarang
+        </button>        
+        <div class="modal fade" id="belicoure__{{ $row->id_course }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Beli Course</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-            </div>     
-            @endforeach       
-            <!-- <div class="col-3">
-              <div class="card" style="width: 15rem;">
-                <img src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">KELAS KEBUN</h5>
-                  <p class="card-text" style="color: #808080"><small>Prof. Najendra Arzan</small></p>
-                  <p class="card-text" style="color: #808080"><small>Rp150.000</small></p>                
-                </div>
-                <div class="card-footer">
-                  <a href="riwayatBeli" class="btn btn-primary float-right" type="submit">Beli</a>
-                </div>
+              <div class="modal-body text-start">
+                Apakah anda yakin ingin membeli course tersebut?                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
+                <form action="{{ route('siswa.store.transaction.course') }}" method="post">
+                @csrf
+                  <input type="text" name="id_user" value="{{ Auth::user()->id }}" hidden>
+                  <input type="text" name="id_course" value="{{ $row->id_course }}" hidden>
+                  <button type="submit" class="btn btn-success btn-sm">Konfirmasi Pembayaran</button>
+                </form>                 
               </div>
             </div>
-            <div class="col-3">
-              <div class="card h-100" style="width: 15rem;">
-                <img src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">KELAS SAWAH</h5>
-                  <p class="card-text" style="color: #808080"><small>Prof. Najendra Arzan</small></p>
-                  <p class="card-text" style="color: #808080"><small>Rp150.000</small></p>
-                </div>
-              <div class="card-footer">
-                <a href="riwayatBeli" class="btn btn-primary float-right" type="submit">Beli</a>
-              </div>
-            </div> -->
-           
           </div>
-        </div>
-        </div>
+        </div>        
       </div>
-      
     </div>
   </div>
+  @endforeach
 </div>
-
-    <footer class="pt-3 mt-4 text-muted border-top">
-    </footer>
-  </div>
-</div>
-
+<script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+</script>
 @endsection

@@ -14,6 +14,7 @@ class Course extends Model
     'nama_course',
     'harga_course',
     'perkiraan_course',
-    'tgl_dibuat',
+    'deskripsi_course',
+    'isi_course'
     ];
 }

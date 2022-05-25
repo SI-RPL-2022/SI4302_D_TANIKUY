@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TransaksiCourse extends Model
+class TransaksiPaket extends Model
 {
     use HasFactory;
-    protected $table = "transaksi_course";
-    protected $primaryKey = 'id_transaksi_course';
+    protected $table = "transaksi_paket";
+    protected $primaryKey = 'id_transaksi_paket';
     protected $fillable = [    
-    'id_course',
+    'id_paket',
     'id_user',
     'status_pembayaran',
     'bukti_transfer'

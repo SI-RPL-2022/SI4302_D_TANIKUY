@@ -8,16 +8,14 @@
                   <tr>
                     <th>Nama Course</th>
                     <th>Harga Course</th>
-                    <th>Perkiraan Waktu Belajar Course</th>
-                    <th>Tanggal Buat </th>
+                    <th>Perkiraan Waktu Belajar Course</th>                    
                     <th colspan="2">Action</th>
                   </tr>
                   @foreach ($datas as $key=>$value)
                       <tr>
                           <td>{{ $value->nama_course}}</td>
                           <td>{{ $value->harga_course}}</td>
-                          <td>{{ $value->perkiraan_waktu}}</td>
-                          <td>{{ $value->tgl_dibuat}}</td>
+                          <td>{{ $value->perkiraan_waktu}} Jam</td>                          
                           <td><a class="btn btn-info" href="{{ url('course/'.$value->id_course.'/edit') }}">Update</a></td>
                           <td>
                               <form action="{{ url('course/'.$value->id_course) }}" method="POST">

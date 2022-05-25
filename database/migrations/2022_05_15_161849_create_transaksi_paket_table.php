@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transaksi_course', function (Blueprint $table) {
-            $table->id('id_transaksi_course');
-            $table->bigInteger('id_course')->unsigned();
-            $table->foreign('id_course')->references('id_course')->on('course')->onUpdate('cascade')->onDelete('cascade');
+        Schema::create('transaksi_paket', function (Blueprint $table) {
+            $table->id('id_transaksi_paket');
+            $table->bigInteger('id_paket')->unsigned();
+            $table->foreign('id_paket')->references('id_paket')->on('paket')->onUpdate('cascade')->onDelete('cascade');
             $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('status_pembayaran')->default('Belum Lunas');
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaksi_course');
+        Schema::dropIfExists('transaksi_paket');
     }
 };

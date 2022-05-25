@@ -12,14 +12,14 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
         
         <link href="{{asset('css/styles.css')}}" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/f1223f01a6.js" crossorigin="anonymous"></script>
     </head>
     <body>
 
 
-@include('partials.navbaradmin');
+@include('partials.navbaradmin')
 <div class="container">
     @yield('container')
 </div>
-
 </body>
 </html>

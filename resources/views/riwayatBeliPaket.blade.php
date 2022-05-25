@@ -16,9 +16,8 @@
         <thead>
           <tr>
             <th scope="col">No</th>
-            <th scope="col">Nama Course</th>
-            <th scope="col">Tanggal Beli</th>
-            <th scope="col">Perkiraan Waktu</th>
+            <th scope="col">Nama Paket</th>
+            <th scope="col">Tanggal Beli</th>            
             <th scope="col">Harga</th>
             <th scope="col">Status Pembayaran</th>
             <th scope="col">Aksi</th>
@@ -29,10 +28,9 @@
           @foreach($data as $datas)
           <tr>
             <th scope="row">{{ $no++ }}</th>
-            <td>{{ $datas->nama_course }}</td>
-            <td>{{ $datas->created_at }}</td>
-            <td>{{ $datas->perkiraan_waktu }}</td>
-            <td>{{ $datas->harga_course }}</td>
+            <td>{{ $datas->nama_paket }}</td>
+            <td>{{ $datas->created_at }}</td>            
+            <td>{{ $datas->harga_paket }}</td>
             <td>
               @if($datas->status_pembayaran == "Belum Lunas")
                 <span class="badge bg-danger">{{ $datas->status_pembayaran }}</span>
@@ -88,10 +86,10 @@
                 </div>
               </div>  
               @if($datas->bukti_transfer == "Tidak Ada" || $datas->status_pembayaran == "Belum Lunas")            
-              <button type="button" class="btn btn-sm btn-warning btn-square mb-1" data-bs-toggle="modal" data-bs-target="#buktitransfer_{{ $datas->id_transaksi_course }}">
+              <button type="button" class="btn btn-sm btn-warning btn-square mb-1" data-bs-toggle="modal" data-bs-target="#buktitransfer_{{ $datas->id_transaksi_paket }}">
                 <i class="fas fa-upload"></i>
               </button>              
-              <div class="modal fade" id="buktitransfer_{{ $datas->id_transaksi_course }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="buktitransfer_{{ $datas->id_transaksi_paket }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -99,7 +97,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form action="{{ url('siswa/confirm_transaction_course/'.$datas->id_transaksi_course) }}" method="post" enctype="multipart/form-data">
+                      <form action="{{ url('siswa/confirm_transaction_paket/'.$datas->id_transaksi_paket) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <input type="file" class="form-control form-control-sm" name="bukti_transfer">                                               
                     </div>
@@ -112,10 +110,10 @@
                 </div>
               </div> 
               @else
-              <button type="button" class="btn btn-sm btn-dark btn-square mb-1" data-bs-toggle="modal" data-bs-target="#hasilbuktitransfer_{{ $datas->id_transaksi_course }}">
+              <button type="button" class="btn btn-sm btn-dark btn-square mb-1" data-bs-toggle="modal" data-bs-target="#hasilbuktitransfer_{{ $datas->id_transaksi_paket }}">
                 <i class="fas fa-eye"></i>
               </button>              
-              <div class="modal fade" id="hasilbuktitransfer_{{ $datas->id_transaksi_course }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="hasilbuktitransfer_{{ $datas->id_transaksi_paket }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">

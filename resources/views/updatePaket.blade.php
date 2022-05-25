@@ -6,15 +6,12 @@
                     <form action="{{ url('updatePaket/'.$paket->id_paket) }}" method="POST" enctype="multipart/form-data" >
                         @csrf
                         <label>Nama Paket</label>
-                        <select class="form-select" aria-label="Default select example" name="nama_paket">
-                            <option value="Free" {{$paket->nama_paket == "Free" ? 'selected' : ''}}>Free</option>
-                            <option value="Premium" {{$paket->nama_paket == "Premium" ? 'selected' : ''}}>Premium</option>
-                        </select>
+                        <input type="text" name="nama_paket" class="form-control" value="{{ $paket->nama_paket }}">                        
                         <label>List Course</label>
                         <input type="text" value="{{ $paket->nama_course }}" name="nama_course_old" hidden>
                         <select multiple="" class="form-select" name="nama_course[]">
                             @foreach($mod as $mods)
-                            <option value="{{ $mods->nama_course }}">{{ $mods->nama_course }}</option>
+                            <option value="{{ $mods->nama_course }}">{{ $mods->nama_course }} (Rp.{{ $mods->harga_course }})</option>
                             @endforeach
                         </select>
                         <div class="form-group">
