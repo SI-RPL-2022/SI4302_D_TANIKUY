@@ -106,11 +106,11 @@ Route::get('siswa/tugas', [AssessmentController::class, 'indextugas'])->middlewa
 Route::get('siswa/soal/{id}', [AssessmentController::class, 'indexsoal'])->middleware('is_siswa');
 Route::post('siswa/soal/store', [AssessmentController::class, 'storejawaban'])->middleware('is_siswa');
 Route::get('siswa/tugas/jawaban', [AssessmentController::class, 'showjawaban'])->middleware('is_siswa');
-Route::get('/userDash', function(){
-    return view('userDash');
-});
-
-
+Route::get('siswa/mycourse', [App\Http\Controllers\CourseController::class, 'showMyCourse'])->middleware('is_siswa');
+Route::get('siswa/mycourse/{nama_course}/{id_course}/{id_user}', [App\Http\Controllers\CourseController::class, 'showDetailCourse'])->middleware('is_siswa');
+Route::post('siswa/tambahReview', [App\Http\Controllers\CourseController::class, 'tambahReview'])->middleware('is_siswa');
+Route::post('siswa/editReview/{id}', [App\Http\Controllers\CourseController::class, 'editReview'])->middleware('is_siswa');
+Route::get('siswa/hapusReview/{id}', [App\Http\Controllers\CourseController::class, 'hapusReview'])->middleware('is_siswa');
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');
@@ -131,10 +131,3 @@ Route::get('admin/assessments', [App\Http\Controllers\AssessmentController::clas
 Route::post('admin/assessments/store/{id_jawaban}', [App\Http\Controllers\AssessmentController::class, 'storeNilaiAssessment']);
 Route::resource('course', CourseController::class);
 Route::get('admin/editCourse', [CourseController::class, 'index'])->name('admin.editCourse')->middleware('is_admin');
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

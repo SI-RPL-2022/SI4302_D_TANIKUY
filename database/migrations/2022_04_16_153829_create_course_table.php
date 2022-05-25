@@ -16,9 +16,12 @@ return new class extends Migration
         Schema::create('course', function (Blueprint $table) {
             $table->id('id_course');
             $table->string('nama_course');
-            $table->string('harga_course',10);
-            $table->string('perkiraan_waktu',10);
-            $table->date('tgl_dibuat');
+            $table->string('harga_course');
+            $table->string('perkiraan_waktu');
+            $table->text('deskripsi_course');
+            $table->string('link_video')->default('Tidak Ada');
+            $table->text('isi_course');            
+            // $table->date('tgl_dibuat');
             $table->timestamps();
         });
     }
