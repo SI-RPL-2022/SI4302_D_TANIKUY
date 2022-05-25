@@ -41,7 +41,7 @@
                     <a class="nav-link" href="#" style="color:black;">Hubungi kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:black;">{{Auth::user()->name}}</a>
+                    <a class="nav-link" href="{{ url('siswa/dashboard') }}" style="color:black;">{{Auth::user()->name}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"
@@ -65,8 +65,8 @@
         <h1 class="text-center" style="color:white;">INDONESIA!</h1>
         </div>
         <div align="center" style="margin-top:25px;">
-        <a href="paket" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Paket</a>
-        <a href="tambahCourse" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Course</button>
+        <a href="{{ url('siswa/buy_paket') }}" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Paket</a>
+        <a href="{{ url('siswa/buy_course') }}" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Course</button>
         <a href="" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Blog</a>
         </div>
     </body>

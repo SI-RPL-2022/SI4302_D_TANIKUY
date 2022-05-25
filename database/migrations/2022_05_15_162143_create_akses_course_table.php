@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->bigInteger('id_course')->unsigned();
             $table->foreign('id_course')->references('id_course')->on('course')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('status_course')->default('Belum Selesai');
+            $table->timestamp('akses_terakhir')->useCurrent();
         });
     }
 

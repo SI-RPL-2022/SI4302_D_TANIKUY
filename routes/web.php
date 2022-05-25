@@ -9,6 +9,7 @@ use App\Http\Controllers\TransaksiController;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\AssessmentController;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +96,7 @@ Route::get('siswa/tugas', [AssessmentController::class, 'indextugas'])->middlewa
 Route::get('siswa/soal/{id}', [AssessmentController::class, 'indexsoal'])->middleware('is_siswa');
 Route::post('siswa/soal/store', [AssessmentController::class, 'storejawaban'])->middleware('is_siswa');
 Route::get('siswa/tugas/jawaban', [AssessmentController::class, 'showjawaban'])->middleware('is_siswa');
+Route::get('siswa/dashboard', [SiswaController::class, 'index'])->middleware('is_siswa');
 Route::get('siswa/buy_course', [TransaksiController::class, 'showCourse'])->name('siswa.buy.course')->middleware('is_siswa');
 Route::post('siswa/store_course', [TransaksiController::class, 'storeTransactionCourse'])->name('siswa.store.transaction.course')->middleware('is_siswa');
 Route::post('siswa/confirm_transaction_course/{id}', [TransaksiController::class, 'confirmTransactionCourse'])->name('siswa.confirm.transaction.course')->middleware('is_siswa');
@@ -130,7 +132,6 @@ Route::get('admin/assessments', [App\Http\Controllers\AssessmentController::clas
 Route::post('admin/assessments/store/{id_jawaban}', [App\Http\Controllers\AssessmentController::class, 'storeNilaiAssessment']);
 Route::resource('course', CourseController::class);
 Route::get('admin/editCourse', [CourseController::class, 'index'])->name('admin.editCourse')->middleware('is_admin');
-//NEW UPDATE
 Route::get('admin/konfirmasi-transaksi/course', [App\Http\Controllers\TransaksiController::class, 'showKonfirmasiCourse'])->middleware('is_admin');
 Route::post('admin/konfirmasi-transaksi/course/terima/{id}', [App\Http\Controllers\TransaksiController::class, 'konfirmasiTerimaTransCourse'])->middleware('is_admin');
 Route::post('admin/konfirmasi-transaksi/course/tolak/{id}', [App\Http\Controllers\TransaksiController::class, 'konfirmasiTolakTransCourse'])->middleware('is_admin');
