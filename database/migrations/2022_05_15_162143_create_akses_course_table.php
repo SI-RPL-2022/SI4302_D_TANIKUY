@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transaksi_course', function (Blueprint $table) {
-            $table->id('id_transaksi_course');
-            $table->bigInteger('id_course')->unsigned();
-            $table->foreign('id_course')->references('id_course')->on('course')->onUpdate('cascade')->onDelete('cascade');
+        Schema::create('akses_course', function (Blueprint $table) {
+            $table->id('id_akses_course');
             $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('status_pembayaran')->default('Belum Lunas');
-            $table->string('bukti_transfer')->default('Tidak Ada');
-            $table->timestamps();
+            $table->bigInteger('id_course')->unsigned();
+            $table->foreign('id_course')->references('id_course')->on('course')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaksi_course');
+        Schema::dropIfExists('akses_course');
     }
 };
