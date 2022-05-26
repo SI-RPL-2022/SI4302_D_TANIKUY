@@ -24,7 +24,7 @@
             @foreach($mod as $mods)
             <tr>
                 <td>{{ $no++ }}</td>
-                <td><a style="text-decoration:none; color:black;" href="{{ url('siswa/mycourse/'.$mods->nama_course.'/'.$mods->id_course.'/'.$mods->id_user) }}">{{ $mods->nama_course }}</a></td>
+                <td><a style="text-decoration:none; color:black;" href="{{ url('siswa/mycourse/'.$mods->nama_course.'/'.$mods->id_course.'/'.$mods->id_user).'/'.$mods->id_akses_course }}">{{ $mods->nama_course }}</a></td>
                 <td>{{ $mods->created_at }}</td>
                 <td>{{ $mods->perkiraan_waktu }} Jam</td>
             </tr>  

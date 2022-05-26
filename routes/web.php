@@ -105,9 +105,7 @@ Route::get('siswa/buy_paket', [TransaksiController::class, 'showPaket'])->middle
 Route::post('siswa/store_paket', [TransaksiController::class, 'storeTransactionPaket'])->middleware('is_siswa');
 Route::post('siswa/confirm_transaction_paket/{id}', [TransaksiController::class, 'confirmTransactionpaket'])->middleware('is_siswa');
 Route::get('siswa/mycourse', [App\Http\Controllers\CourseController::class, 'showMyCourse'])->middleware('is_siswa');
-Route::get('siswa/mycourse/{nama_course}/{id_course}/{id_user}', [App\Http\Controllers\CourseController::class, 'showDetailCourse'])->middleware('is_siswa');
-Route::get('siswa/mycourse', [App\Http\Controllers\CourseController::class, 'showMyCourse'])->middleware('is_siswa');
-Route::get('siswa/mycourse/{nama_course}/{id_course}/{id_user}', [App\Http\Controllers\CourseController::class, 'showDetailCourse'])->middleware('is_siswa');
+Route::get('siswa/mycourse/{nama_course}/{id_course}/{id_user}/{id_akses_course}', [App\Http\Controllers\CourseController::class, 'showDetailCourse'])->middleware('is_siswa');
 Route::post('siswa/tambahReview', [App\Http\Controllers\CourseController::class, 'tambahReview'])->middleware('is_siswa');
 Route::post('siswa/editReview/{id}', [App\Http\Controllers\CourseController::class, 'editReview'])->middleware('is_siswa');
 Route::get('siswa/hapusReview/{id}', [App\Http\Controllers\CourseController::class, 'hapusReview'])->middleware('is_siswa');
@@ -117,6 +115,7 @@ Route::post('forum/store', [ForumController::class, 'store'])->name('forum.store
 Route::get('forum/show-reply/{id}', [ForumController::class, 'showReply'])->name('reply.forum.show');
 Route::post('forum/store-reply', [ForumController::class, 'storeReply'])->name('reply.forum.store');
 Route::get('forum/search', [ForumController::class, 'searchForum'])->name('forum.search');
+Route::get('siswa/verifikasi-selesai-course/{id_akses_course}', [App\Http\Controllers\CourseController::class, 'verifSelesaiCourse'])->middleware('is_siswa');
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');

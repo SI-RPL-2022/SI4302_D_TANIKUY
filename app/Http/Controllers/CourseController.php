@@ -132,8 +132,12 @@ class CourseController extends Controller
         return view('myCourse', compact('mod'));
     }
 
-    public function showDetailCourse($nama_course, $id_course, $id_user)
+    public function showDetailCourse($nama_course, $id_course, $id_user,$id_akses_course)
     {
+        $update_time = AksesCourse::find($id_akses_course);
+        $update_time->akses_terakhir = now();
+        $update_time->save();
+
         $show_review = DB::table('review')
                         ->select('review.id_review', 'review.isi_review', 'course.id_course',
                                 'users.id', 'users.name', 'review.created_at')
@@ -159,9 +163,12 @@ class CourseController extends Controller
         if($check === NULL){
             return redirect()->back()->with('alert', 'Anda tidak memilik hak untuk mengakses course ini!');
         }else{
-            $mod = DB::table('course')
-                    ->select('course.nama_course', 'course.isi_course', 'course.id_course', 'course.link_video')
+            $mod = DB::table('akses_course')
+                    ->select('course.nama_course', 'course.isi_course', 'course.id_course', 'course.link_video', 'akses_course.id_akses_course', 'akses_course.status_course')
+                    ->join('course', 'course.id_course', '=', 'akses_course.id_course')                                
+                    ->join('users', 'akses_course.id_user', '=', 'users.id') 
                     ->where('course.nama_course', $nama_course)
+                    ->where('akses_course.id_akses_course', $id_akses_course)
                     ->first();
                     
             return view('detailCourse', compact('mod', 'show_review', 'show_all_review'));
@@ -199,6 +206,16 @@ class CourseController extends Controller
 
         return redirect()->back();
     }
+    
+    public function verifSelesaiCourse(Request $request, $id_akses_course)
+    {
+        $data = AksesCourse::find($id_akses_course);
+        $data->status_course = $request->status_course;
+        $data->save();
+
+        return redirect()->back();
+    }
 }
+
 
 
