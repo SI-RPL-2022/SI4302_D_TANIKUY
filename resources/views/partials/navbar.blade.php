@@ -1,53 +1,51 @@
-<!-- partial:index.partial.html -->
-<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-<div class="wrapper">
-	<div class="navbar">
-		<div class="logo">
-			<image src="{{ asset('image/logo.png') }}" width="50%">
-		</div>
-		<ul class="flex" style="margin-right: 40%">
-			<li class="px-4 py-2"><a href="paket">Home</a></li>
-			<li class="px-4 py-2"><a href="paket">Paket</a></li>
-			<li class="px-4 py-2"><a href="buy_course">Course</a></li>
-			<li class="px-4 py-2">Forum</li>
-			<li class="px-4 py-2">Blog</li>
-			<li class="px-4 py-2"><a href="tugas">Latihan Soal</a></li>
-
-		</ul>
-		<div class="nav_right">
-			<ul>
-				<li class="nr_li dd_main">
-
-					<!-- <img src="{{ asset('image/img_avatar.png') }}" alt="profile_img"> -->
-					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-					
-					<div class="dd_menu">
-						<div class="dd_left">
-							<ul>
-								<li><i class="far fa-star"></i></li>
-								<li><i class="fas fa-cog"></i></li>
-								<li><i class="fas fa-sign-out-alt"></i></li>
-							</ul>	
-						</div>
-						<div class="dd_right">
-							<ul>
-								<li>profile</li>
-								<li>Settings</li>
-								<li>Logout</li>
-							</ul>
-						</div>
-					</div>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF; border-bottom:2px solid green;">
+	<div class="container-fluid">
+		<a class="navbar-brand mb-1	" href="#">
+			<img src="{{ asset('image/logo.png') }}" alt="" width="120" class="d-inline-block align-text-top">	
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarScroll">
+			<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="#">Home</a>
 				</li>
-				<li style="color: black;padding-left: 10px"><span><b>V</b></span></li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Paket</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Course</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('forum.show') }}">Forum</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Blog</a>
+				</li>																
 			</ul>
+			<div class="d-flex">
+				@guest
+				@else
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:rgb(120,120,120);">
+						{{ Auth::user()->name }}
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+						<li>
+							<a class="dropdown-item" href="#">Dashboard</a>
+						</li>					
+						<li><hr class="dropdown-divider"></li>
+						<li>
+							<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+							<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+								@csrf
+							</form>							
+						</li>
+					</ul>
+				</li>
+				@endguest
+			</div>		
 		</div>
 	</div>
-</div>
-<!-- partial -->
- <script  src="js/script.js"></script>
-
-	<br>
-	<div class="navbarline"></div>
+</nav> 
