@@ -98,7 +98,7 @@ Route::get('siswa/tugas', [AssessmentController::class, 'indextugas'])->middlewa
 Route::get('siswa/soal/{id}', [AssessmentController::class, 'indexsoal'])->middleware('is_siswa');
 Route::post('siswa/soal/store', [AssessmentController::class, 'storejawaban'])->middleware('is_siswa');
 Route::get('siswa/tugas/jawaban', [AssessmentController::class, 'showjawaban'])->middleware('is_siswa');
-Route::get('siswa/dashboard', [SiswaController::class, 'index'])->middleware('is_siswa');
+Route::get('siswa/dashboard', [SiswaController::class, 'index'])->name('siswa.dashboard')->middleware('is_siswa');
 Route::get('siswa/buy_course', [TransaksiController::class, 'showCourse'])->name('siswa.buy.course')->middleware('is_siswa');
 Route::post('siswa/store_course', [TransaksiController::class, 'storeTransactionCourse'])->name('siswa.store.transaction.course')->middleware('is_siswa');
 Route::post('siswa/confirm_transaction_course/{id}', [TransaksiController::class, 'confirmTransactionCourse'])->name('siswa.confirm.transaction.course')->middleware('is_siswa');
@@ -119,6 +119,10 @@ Route::get('forum/show-reply/{id}', [ForumController::class, 'showReply'])->name
 Route::post('forum/store-reply', [ForumController::class, 'storeReply'])->name('reply.forum.store');
 Route::get('forum/search', [ForumController::class, 'searchForum'])->name('forum.search');
 Route::get('siswa/verifikasi-selesai-course/{id_akses_course}', [App\Http\Controllers\CourseController::class, 'verifSelesaiCourse'])->middleware('is_siswa');
+Route::post('forum/edit-forum/{id}', [ForumController::class, 'editForum'])->name('forum.edit');
+Route::get('forum/hapus-forum/{id}', [ForumController::class, 'hapusForum'])->name('forum.hapus');
+Route::post('forum/edit-reply/{id}', [ForumController::class, 'editReply'])->name('reply.forum.edit');
+Route::get('forum/hapus-reply/{id}', [ForumController::class, 'hapusReply'])->name('reply.forum.hapus');
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');
