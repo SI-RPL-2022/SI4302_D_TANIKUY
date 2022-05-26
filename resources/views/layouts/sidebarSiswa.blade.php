@@ -32,6 +32,11 @@
             <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ route('siswa.riwayat.transaction.course') }}">Riwayat Transaksi</a>
           </div>
         </li>
+        <li class="mb-0">
+          <div class="d-grid gap-2">
+            <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ url('create-keluhan') }}">Keluhan</a>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
