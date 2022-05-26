@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\CourseController;
 
 use App\Http\Controllers\PaketController;
@@ -10,6 +9,8 @@ use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\AssessmentController;
 use App\Http\Controllers\SiswaController;
+
+use App\Http\Controllers\KeluhanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,9 @@ use App\Http\Controllers\SiswaController;
 
 
 
-
+Route::get('/keluhan', function(){
+    return view('keluhan');
+});
 Route::get('/submit', function () {
     return view('submit');
 });
@@ -143,3 +146,7 @@ Route::get('admin/konfirmasi-transaksi/paket/hapus/{id}', [App\Http\Controllers\
 Route::get('admin/akses-course', [App\Http\Controllers\CourseController::class, 'showDataAkses'])->middleware('is_admin');
 Route::post('admin/akses-course/tambah', [App\Http\Controllers\CourseController::class, 'tambahDataAkses'])->middleware('is_admin');
 Route::get('admin/akses-course/hapus/{id}', [App\Http\Controllers\CourseController::class, 'hapusDataAkses'])->middleware('is_admin');
+
+Route::get('/keluhan', [KeluhanController::class,'index']);
+Route::get('/create-keluhan', [KeluhanController::class,'create']);
+Route::post('/store', [KeluhanController::class,'store']);
