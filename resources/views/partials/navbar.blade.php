@@ -18,7 +18,7 @@
 					<a class="nav-link" href="{{ route('siswa.buy.course') }}">Course</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Forum</a>
+					<a class="nav-link" href="{{ route('forum.show') }}">Forum</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Blog</a>

@@ -3,13 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CourseController;
-
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\TransaksiController;
-
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\AssessmentController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\ForumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,6 +111,12 @@ Route::get('siswa/mycourse/{nama_course}/{id_course}/{id_user}', [App\Http\Contr
 Route::post('siswa/tambahReview', [App\Http\Controllers\CourseController::class, 'tambahReview'])->middleware('is_siswa');
 Route::post('siswa/editReview/{id}', [App\Http\Controllers\CourseController::class, 'editReview'])->middleware('is_siswa');
 Route::get('siswa/hapusReview/{id}', [App\Http\Controllers\CourseController::class, 'hapusReview'])->middleware('is_siswa');
+Route::get('forum', [ForumController::class, 'index'])->name('forum.show');
+Route::get('forum/add', [ForumController::class, 'create'])->name('forum.add');
+Route::post('forum/store', [ForumController::class, 'store'])->name('forum.store');
+Route::get('forum/show-reply/{id}', [ForumController::class, 'showReply'])->name('reply.forum.show');
+Route::post('forum/store-reply', [ForumController::class, 'storeReply'])->name('reply.forum.store');
+Route::get('forum/search', [ForumController::class, 'searchForum'])->name('forum.search');
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');
