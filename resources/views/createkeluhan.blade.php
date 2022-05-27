@@ -30,5 +30,16 @@
     </div>
 
 </div>
-
+<script>
+<?php if (session('success'))
+echo <<<DATA
+Swal.fire(
+  'Terimakasih!',
+  'Keluhan Berhasil Dikirim!',
+  'success'
+)
+endif
+DATA
+?>
+</script>
 @endsection
