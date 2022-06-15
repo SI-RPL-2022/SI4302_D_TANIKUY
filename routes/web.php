@@ -123,6 +123,9 @@ Route::post('forum/edit-forum/{id}', [ForumController::class, 'editForum'])->nam
 Route::get('forum/hapus-forum/{id}', [ForumController::class, 'hapusForum'])->name('forum.hapus');
 Route::post('forum/edit-reply/{id}', [ForumController::class, 'editReply'])->name('reply.forum.edit');
 Route::get('forum/hapus-reply/{id}', [ForumController::class, 'hapusReply'])->name('reply.forum.hapus');
+//NEW
+Route::post('forum/show-reply/tambah-like', [ForumController::class, 'tambahLikeForum'])->name('forum.tambah.like');
+Route::get('forum/show-reply/tambah-dislike/{id_user}/{id_forum}', [ForumController::class, 'tambahDislikeForum'])->name('forum.tambah.dislike');
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');
