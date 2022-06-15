@@ -11,6 +11,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url('admin/konfirmasi-transaksi/course') }}">Konfirmasi Transaksi</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url('admin/akses-course') }}">Akses Course</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url('admin/user-account') }}">User Account</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url('admin/blog') }}">Blog</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf

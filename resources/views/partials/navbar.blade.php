@@ -9,7 +9,7 @@
 		<div class="collapse navbar-collapse" id="navbarScroll">
 			<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="#">Home</a>
+					<a class="nav-link" aria-current="page" href="{{ url('/') }}">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ url('siswa/buy_paket') }}">Paket</a>
@@ -21,11 +21,19 @@
 					<a class="nav-link" href="{{ route('forum.show') }}">Forum</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Blog</a>
+					<a class="nav-link" href="{{ url('blog') }}">Blog</a>
 				</li>																
 			</ul>
 			<div class="d-flex">
 				@guest
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route('register') }}">Daftar</a>
+					</li>	
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route('login') }}">Masuk</a>
+					</li>	
+				</ul>				
 				@else
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:rgb(120,120,120);">

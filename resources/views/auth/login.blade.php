@@ -26,7 +26,7 @@
                     @enderror
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg" style="background-color:#8E6A4A; height:43px; width: 100px;">SIGN IN</button>
+            <button type="submit" class="btn btn-primary btn-lg" style="background-color:#8E6A4A;">SIGN IN</button>
             <br>
             <p style="color:#84E13C; font-size: 15px; margin-top:15px;">
                 Not a member? <a href="{{ url('register')}}">Sign up now</a>

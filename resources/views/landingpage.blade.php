@@ -25,10 +25,10 @@
                     <a class="nav-link" href="#" style="color:black;">Hubungi kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="{{'register'}}" style="color:black;">Daftar</a>
+                    <a class="nav-link font-weight-bold" href="{{ route('register') }}" style="color:black;">Daftar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="{{'login'}}" style="color:black;">Masuk</a>
+                    <a class="nav-link font-weight-bold" href="{{ route('login') }}" style="color:black;">Masuk</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold" href="#"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color:black; margin-top: 10px;"></i></a>
@@ -67,7 +67,7 @@
         <div align="center" style="margin-top:25px;">
         <a href="{{ url('siswa/buy_paket') }}" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Paket</a>
         <a href="{{ url('siswa/buy_course') }}" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Course</button>
-        <a href="" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Blog</a>
+        <a href="{{ url('blog') }}" type="button" class="btn btn-outline-light ms-2 me-2" style="height:35px; width: 80px;">Blog</a>
         </div>
     </body>
 </html>

@@ -44,7 +44,7 @@
                 <input id="password-confirm" type="password" style="background-color:#3A4149; height:50px;" class="form-control text-light" name="password_confirmation" required autocomplete=off" autofocus placeholder="Confirm Password">
             </div>
         </div>
-        <button type="submit"  class="btn btn-primary btn-lg" style="background-color:#8E6A4A; height:43px; width: 100px;">SIGN UP</button>
+        <button type="submit" class="btn btn-primary btn-lg" style="background-color:#8E6A4A;">SIGN UP</button>
     </form>
 </div>
 <!-- <div class="container">
