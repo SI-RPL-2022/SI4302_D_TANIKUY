@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('container')
-    
-    <div class="col-12">                    
-        <a href="{{ route('forum.show') }}" class="btn btn-sm btn-light me-4 mt-3">Kembali</a>                 
+
+    <div class="col-12">
+        <a href="{{ route('forum.show') }}" class="btn btn-sm btn-light me-4 mt-3">Kembali</a>
         <div class="card mt-4">
-            <div class="card-body">     
+            <div class="card-body">
                 <div class="row">
                     <div class="col-9">
                         <h4 class="card-title fw-bold mt-2">
@@ -13,33 +13,33 @@
                         </h4>
                     </div>
                     <div class="col-3 text-end" style="font-size:13px;">
-                        <?php             
-                            $waktu = date('d F Y, H:i:s', strtotime( $forum->created_at )); 
+                        <?php
+                            $waktu = date('d F Y, H:i:s', strtotime( $forum->created_at ));
                         ?>
-                        {{ $waktu }}                            
+                        {{ $waktu }}
                     </div>
-                </div>                                                                           
-                <p class="card-text fw-light" align="justify">{{ $forum->isi_forum }}</p>                
-                <p class="text-start text-muted" style="font-size:13px;">{{ $count_reply }} Comment &nbsp.&nbsp {{ $count_like }} Like</p>                 
+                </div>
+                <p class="card-text fw-light" align="justify">{{ $forum->isi_forum }}</p>
+                <p class="text-start text-muted" style="font-size:13px;">{{ $count_reply }} Comment &nbsp.&nbsp {{ $count_like }} Like</p>
                 <div class="row g-0">
                     <div class="col-1">
                         <form action="{{ url('forum/show-reply/tambah-like') }}" method="post">
                             @csrf
                             <input type="text" name="id_forum" value="{{ $forum->id_forum }}" hidden>
                             <input type="text" name="id_user" value="{{ Auth::user()->id }}" hidden>
-                            <button type="submit" class="btn btn-sm btn-light" style="background:none; border:none; font-size:13px;"><i class="far fa-thumbs-up"></i> Like</button> 
-                        </form> 
-                    </div>                    
+                            <button type="submit" class="btn btn-sm btn-light" style="background:none; border:none; font-size:13px;"><i class="far fa-thumbs-up"></i> Like</button>
+                        </form>
+                    </div>
                     <div class="col-1">
                         @if($check_like != NULL)
-                        <a href="{{ url('forum/show-reply/tambah-dislike/'.Auth::user()->id.'/'.$forum->id_forum) }}" class="btn btn-sm btn-light" style="background:none; border:none; font-size:13px;"><i class="far fa-thumbs-up"></i> Dislike</a>                        
+                        <a href="{{ url('forum/show-reply/tambah-dislike/'.Auth::user()->id.'/'.$forum->id_forum) }}" class="btn btn-sm btn-light" style="background:none; border:none; font-size:13px;"><i class="far fa-thumbs-up"></i> Dislike</a>
                         @endif
-                    </div>                    
+                    </div>
                     <div class="col-10">
-                        <div class="text-end text-muted">                                                                                       
+                        <div class="text-end text-muted">
                             <button type="button" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#replyForum"><i class="fas fa-comments"></i>
                             Comment
-                            </button>                            
+                            </button>
                             <div class="modal fade" id="replyForum" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -52,7 +52,7 @@
                                                 @csrf
                                                 <input type="text" name="id_user" value="{{ Auth::user()->id }}" hidden>
                                                 <input type="text" name="id_forum" value="{{ $forum->id_forum }}" hidden>
-                                                <textarea name="isi_reply_forum" class="form-control" style="resize:none;" cols="2" rows="3"></textarea>                                    
+                                                <textarea name="isi_reply_forum" class="form-control" style="resize:none;" cols="2" rows="3"></textarea>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Tutup</button>
@@ -61,35 +61,35 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                   
+                            </div>
                         </div>
                     </div>
-                </div>                  
+                </div>
             </div>
-        </div>                
+        </div>
     </div>
     <div class="row">
         @foreach($reply_forum as $reply_forums)
         <div class="col-1"></div>
         <div class="col-11">
             <div class="card mt-4">
-                <div class="card-body">    
+                <div class="card-body">
                     <div class="row">
                         <div class="col-9">
-                            <div class="card-text mb-2">            
-                                <img src="https://elementor.nokriwp.com/wp-content/uploads/2018/09/806962_user_512x512.png" style="max-width:45px; max-height:45px" class="rounded-circle" alt="">                    
+                            <div class="card-text mb-2">
+                                <img src="https://elementor.nokriwp.com/wp-content/uploads/2018/09/806962_user_512x512.png" style="max-width:45px; max-height:45px" class="rounded-circle" alt="">
                                 <small class="ms-2 fs-6">{{ $reply_forums->name }}</small>
-                            </div>  
+                            </div>
                         </div>
                         <div class="col-3 text-end" style="font-size:13px;">
-                            <?php             
-                                $waktu = date('d F Y, H:i:s', strtotime( $reply_forums->created_at )); 
+                            <?php
+                                $waktu = date('d F Y, H:i:s', strtotime( $reply_forums->created_at ));
                             ?>
-                            {{ $waktu }}                            
+                            {{ $waktu }}
                         </div>
-                    </div>                                                                                                  
-                    <p class="card-text fw-light" align="justify">{{ $reply_forums->isi_reply_forum }}</p>                    
-                    <div class="row justify-content-end">                        
+                    </div>
+                    <p class="card-text fw-light" align="justify">{{ $reply_forums->isi_reply_forum }}</p>
+                    <div class="row justify-content-end">
                         <div class="col-3">
                             @if($reply_forums->id_user == Auth::user()->id)
                             <div class="text-end">
@@ -108,9 +108,9 @@
                                         <div class="modal-body">
                                             <form action="{{ url('forum/edit-reply/'.$reply_forums->id_reply_forum) }}" method="post">
                                             @csrf
-                                            <div class="form-group">                               
-                                                <textarea name="isi_reply_forum" class="form-control form-control-sm" rows="2" style="resize:none;">{{ $reply_forums->isi_reply_forum }}</textarea>                                                                                                  
-                                            </div>                    
+                                            <div class="form-group">
+                                                <textarea name="isi_reply_forum" class="form-control form-control-sm" rows="2" style="resize:none;">{{ $reply_forums->isi_reply_forum }}</textarea>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Batal</button>
@@ -137,9 +137,9 @@
                                         <div class="modal-body">
                                             <form action="{{ url('forum/edit-reply/'.$reply_forums->id_reply_forum) }}" method="post">
                                             @csrf
-                                            <div class="form-group">                               
-                                                <textarea name="isi_reply_forum" class="form-control form-control-sm" rows="2" style="resize:none;">{{ $reply_forums->isi_reply_forum }}</textarea>                                                                                                  
-                                            </div>                    
+                                            <div class="form-group">
+                                                <textarea name="isi_reply_forum" class="form-control form-control-sm" rows="2" style="resize:none;">{{ $reply_forums->isi_reply_forum }}</textarea>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Batal</button>
@@ -151,9 +151,9 @@
                             </div>
                             @endif
                         </div>
-                    </div>                    
+                    </div>
                 </div>
-            </div>  
+            </div>
         </div>
         @endforeach
     </div>

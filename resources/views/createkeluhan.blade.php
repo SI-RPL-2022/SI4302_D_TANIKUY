@@ -2,14 +2,14 @@
 @section('container')
 <div class="col-5 col-lg-4 mt-3">
   <h2 class="fw-bold" style="font-size:35px;">
-    <a href="" style="text-decoration:none; color:#79ed47;">My</a> <a href="" style="text-decoration:none; color:rgb(120,120,120);">Course</a> 
+    <a href="" style="text-decoration:none; color:#79ed47;">My</a> <a href="" style="text-decoration:none; color:rgb(120,120,120);">Course</a>
     <hr>
   </h2>
 </div>
 <div class="row align-items-md-stretch">
   @include('layouts.sidebarSiswa')
   <div class="col-md-9">
-    <div class="h-100 p-3 bg-light border rounded-3">      
+    <div class="h-100 p-3 bg-light border rounded-3">
       <form action="{{ url('/siswa/keluhan/store') }}" method="POST" class="form" style="size: 5ch">
         @csrf
         <div class="form-group">

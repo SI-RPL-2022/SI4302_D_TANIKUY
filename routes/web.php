@@ -131,10 +131,13 @@ Route::get('blog/cari-kategori', [GuestController::class, 'carikategoriBlog']);
 Route::get('blog/{slug}', [GuestController::class, 'detailBlog']);
 Route::post('forum/show-reply/tambah-like', [ForumController::class, 'tambahLikeForum'])->name('forum.tambah.like');
 Route::get('forum/show-reply/tambah-dislike/{id_user}/{id_forum}', [ForumController::class, 'tambahDislikeForum'])->name('forum.tambah.dislike');
-//new
 Route::get('siswa/keluhan', [App\Http\Controllers\KeluhanController::class,'index'])->middleware('is_siswa');
 Route::get('siswa/keluhan/create', [App\Http\Controllers\KeluhanController::class, 'createKeluhan'])->middleware('is_siswa');
 Route::post('siswa/keluhan/store', [App\Http\Controllers\KeluhanController::class, 'storeKeluhan'])->middleware('is_siswa');
+Route::get('siswa/profile', [App\Http\Controllers\AccountController::class, 'showProfile'])->middleware('is_siswa');
+Route::post('siswa/profile/update/{id}', [App\Http\Controllers\AccountController::class, 'updateProfile'])->middleware('is_siswa');
+Route::get('siswa/profile/edit-password/{id}', [App\Http\Controllers\AccountController::class, 'editProfile'])->middleware('is_siswa');
+Route::post('siswa/profile/update-password/{id}', [App\Http\Controllers\AccountController::class, 'updatePassword'])->middleware('is_siswa');
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');

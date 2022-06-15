@@ -35,8 +35,8 @@ class KeluhanController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function createKeluhan()
-    {        
-        return view('createKeluhan');        
+    {
+        return view('createKeluhan');
     }
 
     /**
@@ -55,7 +55,7 @@ class KeluhanController extends Controller
 
         \Mail::to($x->email)->send(new CreateKeluhanMail($x));
 
-        return redirect(url('siswa/keluhan'))->with('success','Keluhan Berhasil Dikirim');       
+        return redirect(url('siswa/keluhan'))->with('success','Keluhan Berhasil Dikirim');
     }
 
     public function showAllKeluhan()
@@ -69,12 +69,12 @@ class KeluhanController extends Controller
     {
         $mod = Keluhan::find($id);
 
-        $mod->status = 'Sudah Diproses';        
+        $mod->status = 'Sudah Diproses';
         $mod->save();
 
         \Mail::to($mod->email)->send(new BalasanKeluhanMail($mod));
 
-        return redirect(url('admin/data-keluhan'))->with('success','Balasan Keluhan Berhasil Dikirim');       
+        return redirect(url('admin/data-keluhan'))->with('success','Balasan Keluhan Berhasil Dikirim');
     }
 
     public function hapusKeluhan($id_keluhan)
@@ -84,5 +84,5 @@ class KeluhanController extends Controller
 
         return redirect(url('admin/data-keluhan'));
     }
-    
+
 }

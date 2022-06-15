@@ -677,10 +677,14 @@
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/guzzle/guzzle/tree/7.4.3"
 =======
                 "source": "https://github.com/guzzle/guzzle/tree/7.4.4"
 >>>>>>> P3PBI3
+=======
+                "source": "https://github.com/guzzle/guzzle/tree/7.4.4"
+>>>>>>> S3PBI3
             },
             "funding": [
                 {
@@ -698,6 +702,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-05-25T13:24:33+00:00"
 =======
             "time": "2022-06-09T21:39:15+00:00"
@@ -705,6 +710,9 @@
 =======
             "time": "2022-06-09T21:39:15+00:00"
 >>>>>>> S3PBI1
+=======
+            "time": "2022-06-09T21:39:15+00:00"
+>>>>>>> S3PBI3
         },
         {
             "name": "guzzlehttp/promises",
@@ -1599,6 +1607,7 @@
                 "issues": "https://github.com/thephpleague/flysystem/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/thephpleague/flysystem/tree/3.0.20"
 =======
                 "source": "https://github.com/thephpleague/flysystem/tree/3.0.21"
@@ -1606,6 +1615,9 @@
 =======
                 "source": "https://github.com/thephpleague/flysystem/tree/3.0.21"
 >>>>>>> S3PBI1
+=======
+                "source": "https://github.com/thephpleague/flysystem/tree/3.0.21"
+>>>>>>> S3PBI3
             },
             "funding": [
                 {
@@ -1623,6 +1635,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-05-25T19:18:39+00:00"
 =======
             "time": "2022-06-12T17:54:28+00:00"
@@ -1630,6 +1643,9 @@
 =======
             "time": "2022-06-12T17:54:28+00:00"
 >>>>>>> S3PBI1
+=======
+            "time": "2022-06-12T17:54:28+00:00"
+>>>>>>> S3PBI3
         },
         {
             "name": "league/mime-type-detection",
@@ -1691,10 +1707,14 @@
             "name": "monolog/monolog",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "2.6.0",
 =======
             "version": "2.7.0",
 >>>>>>> S3PBI1
+=======
+            "version": "2.7.0",
+>>>>>>> S3PBI3
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
@@ -1702,6 +1722,7 @@
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
 <<<<<<< HEAD
                 "url": "https://api.github.com/repos/Seldaek/monolog/zipball/247918972acd74356b0a91dfaa5adcaec069b6c0",
                 "reference": "247918972acd74356b0a91dfaa5adcaec069b6c0",
@@ -1721,6 +1742,10 @@
                 "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5579edf28aee1190a798bfa5be8bc16c563bd524",
                 "reference": "5579edf28aee1190a798bfa5be8bc16c563bd524",
 >>>>>>> S3PBI1
+=======
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5579edf28aee1190a798bfa5be8bc16c563bd524",
+                "reference": "5579edf28aee1190a798bfa5be8bc16c563bd524",
+>>>>>>> S3PBI3
                 "shasum": ""
             },
             "require": {
@@ -1801,6 +1826,7 @@
                 "issues": "https://github.com/Seldaek/monolog/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/Seldaek/monolog/tree/2.6.0"
 =======
                 "source": "https://github.com/Seldaek/monolog/tree/2.7.0"
@@ -1808,6 +1834,9 @@
 =======
                 "source": "https://github.com/Seldaek/monolog/tree/2.7.0"
 >>>>>>> S3PBI1
+=======
+                "source": "https://github.com/Seldaek/monolog/tree/2.7.0"
+>>>>>>> S3PBI3
             },
             "funding": [
                 {
@@ -1820,10 +1849,14 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-05-10T09:36:00+00:00"
 =======
             "time": "2022-06-09T08:59:12+00:00"
 >>>>>>> P3PBI3
+=======
+            "time": "2022-06-09T08:59:12+00:00"
+>>>>>>> S3PBI3
         },
         {
             "name": "nesbot/carbon",
@@ -2932,10 +2965,14 @@
             ],
             "support": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/console/tree/v6.0.9"
 =======
                 "source": "https://github.com/symfony/console/tree/v6.1.1"
 >>>>>>> P3PBI3
+=======
+                "source": "https://github.com/symfony/console/tree/v6.1.1"
+>>>>>>> S3PBI3
             },
             "funding": [
                 {
@@ -2953,6 +2990,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-05-27T06:40:13+00:00"
 =======
             "time": "2022-06-08T14:02:09+00:00"
@@ -2960,6 +2998,9 @@
 =======
             "time": "2022-06-08T14:02:09+00:00"
 >>>>>>> S3PBI1
+=======
+            "time": "2022-06-08T14:02:09+00:00"
+>>>>>>> S3PBI3
         },
         {
             "name": "symfony/css-selector",
@@ -3097,6 +3138,7 @@
             "name": "symfony/error-handler",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v6.0.9",
             "source": {
                 "type": "git",
@@ -3131,6 +3173,18 @@
                 "url": "https://api.github.com/repos/symfony/error-handler/zipball/d02c662651e5de760bb7d5e94437113309e8f8a0",
                 "reference": "d02c662651e5de760bb7d5e94437113309e8f8a0",
 >>>>>>> S3PBI1
+=======
+            "version": "v6.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/error-handler.git",
+                "reference": "d02c662651e5de760bb7d5e94437113309e8f8a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/error-handler/zipball/d02c662651e5de760bb7d5e94437113309e8f8a0",
+                "reference": "d02c662651e5de760bb7d5e94437113309e8f8a0",
+>>>>>>> S3PBI3
                 "shasum": ""
             },
             "require": {
@@ -3257,6 +3311,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/event-dispatcher/tree/v6.0.9"
 =======
                 "source": "https://github.com/symfony/event-dispatcher/tree/v6.1.0"
@@ -3264,6 +3319,9 @@
 =======
                 "source": "https://github.com/symfony/event-dispatcher/tree/v6.1.0"
 >>>>>>> S3PBI1
+=======
+                "source": "https://github.com/symfony/event-dispatcher/tree/v6.1.0"
+>>>>>>> S3PBI3
             },
             "funding": [
                 {
@@ -3281,6 +3339,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-05-05T16:45:52+00:00"
 =======
             "time": "2022-05-05T16:51:07+00:00"
@@ -3288,6 +3347,9 @@
 =======
             "time": "2022-05-05T16:51:07+00:00"
 >>>>>>> S3PBI1
+=======
+            "time": "2022-05-05T16:51:07+00:00"
+>>>>>>> S3PBI3
         },
         {
             "name": "symfony/event-dispatcher-contracts",
@@ -5647,6 +5709,7 @@
             },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-06-06T14:28:04+00:00"
 =======
             "time": "2022-06-09T07:10:28+00:00"
@@ -5654,6 +5717,9 @@
 =======
             "time": "2022-06-09T07:10:28+00:00"
 >>>>>>> S3PBI1
+=======
+            "time": "2022-06-09T07:10:28+00:00"
+>>>>>>> S3PBI3
         },
         {
             "name": "mockery/mockery",
@@ -7805,6 +7871,7 @@
         {
             "name": "spatie/laravel-ignition",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "1.2.4",
             "source": {
                 "type": "git",
@@ -7827,6 +7894,18 @@
                 "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/5409e699fc19f4d53e59427445b08f90593fda28",
                 "reference": "5409e699fc19f4d53e59427445b08f90593fda28",
 >>>>>>> S3PBI1
+=======
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-ignition.git",
+                "reference": "5409e699fc19f4d53e59427445b08f90593fda28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/5409e699fc19f4d53e59427445b08f90593fda28",
+                "reference": "5409e699fc19f4d53e59427445b08f90593fda28",
+>>>>>>> S3PBI3
                 "shasum": ""
             },
             "require": {
@@ -7904,10 +7983,14 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-06-08T07:07:57+00:00"
 =======
             "time": "2022-06-15T13:55:18+00:00"
 >>>>>>> S3PBI1
+=======
+            "time": "2022-06-15T13:55:18+00:00"
+>>>>>>> S3PBI3
         },
         {
             "name": "theseer/tokenizer",
