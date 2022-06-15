@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\TransaksiController;
@@ -9,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\AssessmentController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\ForumController;
+
+use App\Http\Controllers\KeluhanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,9 @@ use App\Http\Controllers\ForumController;
 
 
 
-
+Route::get('/keluhan', function(){
+    return view('keluhan');
+});
 Route::get('/submit', function () {
     return view('submit');
 });
@@ -95,7 +98,7 @@ Route::get('siswa/tugas', [AssessmentController::class, 'indextugas'])->middlewa
 Route::get('siswa/soal/{id}', [AssessmentController::class, 'indexsoal'])->middleware('is_siswa');
 Route::post('siswa/soal/store', [AssessmentController::class, 'storejawaban'])->middleware('is_siswa');
 Route::get('siswa/tugas/jawaban', [AssessmentController::class, 'showjawaban'])->middleware('is_siswa');
-Route::get('siswa/dashboard', [SiswaController::class, 'index'])->middleware('is_siswa');
+Route::get('siswa/dashboard', [SiswaController::class, 'index'])->name('siswa.dashboard')->middleware('is_siswa');
 Route::get('siswa/buy_course', [TransaksiController::class, 'showCourse'])->name('siswa.buy.course')->middleware('is_siswa');
 Route::post('siswa/store_course', [TransaksiController::class, 'storeTransactionCourse'])->name('siswa.store.transaction.course')->middleware('is_siswa');
 Route::post('siswa/confirm_transaction_course/{id}', [TransaksiController::class, 'confirmTransactionCourse'])->name('siswa.confirm.transaction.course')->middleware('is_siswa');
@@ -116,6 +119,10 @@ Route::get('forum/show-reply/{id}', [ForumController::class, 'showReply'])->name
 Route::post('forum/store-reply', [ForumController::class, 'storeReply'])->name('reply.forum.store');
 Route::get('forum/search', [ForumController::class, 'searchForum'])->name('forum.search');
 Route::get('siswa/verifikasi-selesai-course/{id_akses_course}', [App\Http\Controllers\CourseController::class, 'verifSelesaiCourse'])->middleware('is_siswa');
+Route::post('forum/edit-forum/{id}', [ForumController::class, 'editForum'])->name('forum.edit');
+Route::get('forum/hapus-forum/{id}', [ForumController::class, 'hapusForum'])->name('forum.hapus');
+Route::post('forum/edit-reply/{id}', [ForumController::class, 'editReply'])->name('reply.forum.edit');
+Route::get('forum/hapus-reply/{id}', [ForumController::class, 'hapusReply'])->name('reply.forum.hapus');
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');
@@ -147,3 +154,10 @@ Route::get('admin/konfirmasi-transaksi/paket/hapus/{id}', [App\Http\Controllers\
 Route::get('admin/akses-course', [App\Http\Controllers\CourseController::class, 'showDataAkses'])->middleware('is_admin');
 Route::post('admin/akses-course/tambah', [App\Http\Controllers\CourseController::class, 'tambahDataAkses'])->middleware('is_admin');
 Route::get('admin/akses-course/hapus/{id}', [App\Http\Controllers\CourseController::class, 'hapusDataAkses'])->middleware('is_admin');
+//New
+Route::get('admin/user-account', [App\Http\Controllers\AccountController::class, 'showAllAccount'])->middleware('is_admin');
+Route::get('admin/user-account/delete/{id}', [App\Http\Controllers\AccountController::class, 'deleteAccount'])->middleware('is_admin');
+
+Route::get('/keluhan', [KeluhanController::class,'index']);
+Route::get('/create-keluhan', [KeluhanController::class,'create']);
+Route::post('/store', [KeluhanController::class,'store']);
