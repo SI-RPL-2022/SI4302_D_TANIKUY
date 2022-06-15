@@ -33,7 +33,7 @@
         </li>
         <li class="mb-0">
           <div class="d-grid gap-2">
-            <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ url('create-keluhan') }}">Keluhan</a>
+            <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ url('siswa/keluhan') }}">Keluhan</a>
           </div>
         </li>
       </ul>

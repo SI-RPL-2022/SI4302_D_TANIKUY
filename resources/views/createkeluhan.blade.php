@@ -1,45 +1,33 @@
 @extends('layouts.main')
 @section('container')
-
-<div class="container" style="width: 100%; margin-top:2px;">
-    <div class="container py-3">
-    <header class="pb-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-        <span class="fs-2">Keluhan</span>
-      </a>
-    </header>
-    </div>
-
-    <div class="h-400 p-3 bg-light border rounded-3">
-        <form action="{{ url('/store') }}" method="POST" class="form" style="size: 5ch">
-            @csrf
-            <div class="form-group">
-              <label for="exampleInputEmail1">Nama</label>
-              <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Keluhan</label>
-                <input type="text" class="form-control" id="keluhan" name="keluhan" placeholder="Masukkan keluhan anda">
-              </div><br>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-    </div>
-
+<div class="col-5 col-lg-4 mt-3">
+  <h2 class="fw-bold" style="font-size:35px;">
+    <a href="" style="text-decoration:none; color:#79ed47;">My</a> <a href="" style="text-decoration:none; color:rgb(120,120,120);">Course</a> 
+    <hr>
+  </h2>
 </div>
-<script>
-<?php if (session('success'))
-echo <<<DATA
-Swal.fire(
-  'Terimakasih!',
-  'Keluhan Berhasil Dikirim!',
-  'success'
-)
-endif
-DATA
-?>
-</script>
+<div class="row align-items-md-stretch">
+  @include('layouts.sidebarSiswa')
+  <div class="col-md-9">
+    <div class="h-100 p-3 bg-light border rounded-3">      
+      <form action="{{ url('/siswa/keluhan/store') }}" method="POST" class="form" style="size: 5ch">
+        @csrf
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nama</label>
+          <input type="text" class="form-control form-control-sm" id="nama" name="nama" value="{{ Auth::user()->name }}" readonly>
+          <input type="text" class="form-control form-control-sm" id="nama" name="id_user" value="{{ Auth::user()->id }}" hidden>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Email</label>
+          <input type="email" class="form-control form-control-sm" id="email" name="email" value="{{ Auth::user()->email }}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Keluhan</label>
+            <textarea name="isi_keluhan" class="form-control form-control-sm" style="resize:none;" rows="2"></textarea>
+          </div><br>
+        <button type="submit" class="btn btn-sm btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
 @endsection

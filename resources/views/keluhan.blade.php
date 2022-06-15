@@ -1,35 +1,38 @@
 @extends('layouts.main')
 @section('container')
-
-<div class="container" style="width: 100%; margin-top:2px;">
-    <div class="container py-3">
-    <header class="pb-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-        <span class="fs-2">Keluhan</span>
-      </a>
-    </header>
-    </div>
-
-    <div class="h-400 p-3 bg-light border rounded-3">
-        <a class="btn btn-info" href="{{ url('create-keluhan') }}">Masukkan Keluhan</a>
-        <table class="table-bordered table">
-            <tr>
-              <th>Nama</th>
-              <th>Email</th>
-              <th>Keluhan</th>
-            </tr>
-
-            @foreach ($x as $dataKeluhan)
-            <tr>
-                <td>{{ $dataKeluhan->nama}}</td>
-                <td>{{ $dataKeluhan->email}}</td>
-                <td>{{ $dataKeluhan->keluhan}}</td>
-            </tr>
-            @endforeach
-
-          </table>
-    </div>
-
+<div class="col-5 col-lg-3 mt-3">
+  <h2 class="fw-bold" style="font-size:35px;">
+    <a href="" style="text-decoration:none; color:#79ed47;">Data</a> <a href="" style="text-decoration:none; color:rgb(120,120,120);">Keluhan</a> 
+    <hr>
+  </h2>
 </div>
-
+<div class="row align-items-md-stretch">
+  @include('layouts.sidebarSiswa')
+  <div class="col-md-9">
+    <div class="h-100 p-3 bg-light border rounded-3">      
+      <a href="{{ url('siswa/keluhan/create') }}" class="btn btn-sm btn-primary mb-3">Tambah Keluhan</a>
+      <table class="table">
+        <thead>
+            <tr>
+                <td>No</td>                                
+                <td>Alamat Email</td>      
+                <td>Isi Keluhan</td>                                          
+                <td>Tanggal Kirim</td>                
+            </tr>
+        </thead>
+        <tbody>
+        <?php $no = 1 ?>
+            @foreach($mod as $mods)
+            <tr>
+                <td>{{ $no++ }}</td>
+                <td>{{ $mods->email }}</td>
+                <td>{{ $mods->isi_keluhan }}</td>
+                <td>{{ $mods->created_at }}</td>                
+            </tr>  
+            @endforeach                                  
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>
 @endsection

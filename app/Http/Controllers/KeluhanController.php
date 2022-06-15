@@ -5,10 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Keluhan;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\keluhanCreated;
+use App\Mail\CreateKeluhanMail;
+use App\Mail\BalasanKeluhanMail;
+use DB;
+use Auth;
 
 class KeluhanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +24,9 @@ class KeluhanController extends Controller
      */
     public function index()
     {
-        return view('keluhan');
+        $mod = DB::table('keluhan')->where('id_user', Auth::user()->id)->orderBy('created_at', 'DESC')->get();
+
+        return view('keluhan', compact('mod'));
     }
 
     /**
@@ -24,10 +34,9 @@ class KeluhanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $x = Keluhan::all();
-        return view('createkeluhan');
+    public function createKeluhan()
+    {        
+        return view('createKeluhan');        
     }
 
     /**
@@ -36,61 +45,44 @@ class KeluhanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeKeluhan(Request $request)
     {
         $x = new Keluhan;
-        $x->nama=$request->nama;
+        $x->id_user=$request->id_user;
         $x->email=$request->email;
-        $x->keluhan=$request->keluhan;
-
+        $x->isi_keluhan=$request->isi_keluhan;
         $x->save();
-        \Mail::to($x->email)->send(new keluhanCreated($x));
-        return redirect('/create-keluhan')->with('success','Keluhan Berhasil Dikirim');
+
+        \Mail::to($x->email)->send(new CreateKeluhanMail($x));
+
+        return redirect(url('siswa/keluhan'))->with('success','Keluhan Berhasil Dikirim');       
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function showAllKeluhan()
     {
-        $x = Keluhan::all();
-        return view('keluhan',compact('x'));
+        $mod = DB::table('keluhan')->orderBy('created_at', 'DESC')->get();
+
+        return view('showDataKeluhan', compact('mod'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function balasMailKeluhan(Request $request, $id)
     {
-        //
+        $mod = Keluhan::find($id);
+
+        $mod->status = 'Sudah Diproses';        
+        $mod->save();
+
+        \Mail::to($mod->email)->send(new BalasanKeluhanMail($mod));
+
+        return redirect(url('admin/data-keluhan'))->with('success','Balasan Keluhan Berhasil Dikirim');       
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function hapusKeluhan($id_keluhan)
     {
-        //
-    }
+        $mod = Keluhan::find($id_keluhan);
+        $mod->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect(url('admin/data-keluhan'));
     }
+    
 }

@@ -11,7 +11,8 @@ class Keluhan extends Model
 {
     use HasFactory;
     protected $table = "keluhan";
-    protected $fillable = ['nama', 'email', 'keluhan'];
+    protected $primaryKey = "id_keluhan";
+    protected $fillable = ['id_user	', 'email', 'isi_keluhan'];
 
     protected $hidden;
 }

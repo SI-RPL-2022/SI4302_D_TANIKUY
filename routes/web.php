@@ -131,6 +131,10 @@ Route::get('blog/cari-kategori', [GuestController::class, 'carikategoriBlog']);
 Route::get('blog/{slug}', [GuestController::class, 'detailBlog']);
 Route::post('forum/show-reply/tambah-like', [ForumController::class, 'tambahLikeForum'])->name('forum.tambah.like');
 Route::get('forum/show-reply/tambah-dislike/{id_user}/{id_forum}', [ForumController::class, 'tambahDislikeForum'])->name('forum.tambah.dislike');
+//new
+Route::get('siswa/keluhan', [App\Http\Controllers\KeluhanController::class,'index'])->middleware('is_siswa');
+Route::get('siswa/keluhan/create', [App\Http\Controllers\KeluhanController::class, 'createKeluhan'])->middleware('is_siswa');
+Route::post('siswa/keluhan/store', [App\Http\Controllers\KeluhanController::class, 'storeKeluhan'])->middleware('is_siswa');
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');
@@ -170,7 +174,9 @@ Route::post('admin/blog/post', [App\Http\Controllers\BlogController::class, 'pos
 Route::get('admin/blog/edit/{id}', [App\Http\Controllers\BlogController::class, 'editDataBlog'])->middleware('is_admin');
 Route::post('admin/blog/update/{id}', [App\Http\Controllers\BlogController::class, 'updateDataBlog'])->middleware('is_admin');
 Route::get('admin/blog/delete/{id}', [App\Http\Controllers\BlogController::class, 'deleteDataBlog'])->middleware('is_admin');
+Route::get('admin/data-keluhan', [App\Http\Controllers\KeluhanController::class, 'showAllKeluhan'])->middleware('is_admin');
+Route::post('admin/data-keluhan/balas-mail/{id}', [App\Http\Controllers\KeluhanController::class, 'balasMailKeluhan'])->middleware('is_admin');
+Route::get('admin/data-keluhan/hapus/{id_keluhan}', [App\Http\Controllers\KeluhanController::class, 'hapusKeluhan'])->middleware('is_admin');
 
-Route::get('/keluhan', [KeluhanController::class,'index']);
-Route::get('/create-keluhan', [KeluhanController::class,'create']);
-Route::post('/store', [KeluhanController::class,'store']);
+// Route::get('/create-keluhan', [KeluhanController::class,'create']);
+// Route::post('/store', [KeluhanController::class,'store']);

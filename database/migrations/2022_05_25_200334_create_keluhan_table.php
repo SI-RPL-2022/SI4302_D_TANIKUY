@@ -14,10 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('keluhan', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama',15);
-            $table->string('email',25);
-            $table->string('keluhan');
+            $table->increments('id_keluhan');
+            $table->bigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');                        
+            $table->string('email');
+            $table->string('isi_keluhan');
+            $table->string('status')->default('Belum Diproses');
             $table->timestamps();
         });
     }
