@@ -41,7 +41,7 @@ class LoginController extends Controller
             if(auth()->user()->is_admin == 1){
                 return redirect()->route('admin.home');
             }else{
-                return redirect()->route('/');
+                return redirect()->route('siswa.dashboard');
             }
         }else{
             return redirect()->route('login')->with('error', 'Email Dan Password Salah');

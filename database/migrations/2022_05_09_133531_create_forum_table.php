@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('akses_course', function (Blueprint $table) {
-            $table->id('id_akses_course');
+        Schema::create('forum', function (Blueprint $table) {
+            $table->id("id_forum");
             $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->bigInteger('id_course')->unsigned();
-            $table->foreign('id_course')->references('id_course')->on('course')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('status_course')->default('Belum Selesai');
-            $table->timestamp('akses_terakhir')->useCurrent();
+            $table->string('judul_forum');
+            $table->text('isi_forum');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('akses_course');
+        Schema::dropIfExists('forum');
     }
 };
