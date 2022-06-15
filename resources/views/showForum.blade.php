@@ -5,7 +5,7 @@
 @endsection
 
 @section('container')
-    <div class="col-7 col-lg-3">
+    <div class="col-7 col-lg-3 mt-3">
         <h2 class="fw-bold" style="font-size:35px;">
             <a href="" style="text-decoration:none; color:#79ed47;">FORUM</a> <a href="" style="text-decoration:none; color:rgb(120,120,120);">DISKUSI</a> 
             <hr>
@@ -18,15 +18,22 @@
             <button id="submit" type="submit">Search</button>
         </form>
         @foreach($mod as $mods)
-        <div class="card mt-4">
-            <div class="card-body">                                                
-                <div class="card-text">            
-                    <img src="https://elementor.nokriwp.com/wp-content/uploads/2018/09/806962_user_512x512.png" style="max-width:45px; max-height:45px" class="rounded-circle" alt="">                    
-                    <small class="ms-2 fs-6">{{ $mods->name }}</small>
-                </div>
-                <h4 class="card-title fw-bold mt-2">
-                    {{ $mods->judul_forum }}
-                </h4>
+        <div class="card mt-4 mb-2">
+            <div class="card-body">                                                                
+                <div class="row">
+                    <div class="col-9">
+                        <div class="card-text">            
+                            <img src="https://elementor.nokriwp.com/wp-content/uploads/2018/09/806962_user_512x512.png" style="max-width:45px; max-height:45px" class="rounded-circle" alt="">                    
+                            <small class="ms-2 fs-6">{{ $mods->name }}</small>
+                        </div>
+                    </div>
+                    <div class="col-3 text-end" style="font-size:13px;">
+                        <?php             
+                            $waktu = date('d F Y, H:i:s', strtotime( $mods->created_at )); 
+                        ?>
+                        {{ $waktu }}                            
+                    </div>
+                </div>                
                 <p class="card-text fw-light mb-1" align="justify">{{ $mods->isi_forum }}</p>
                 <div class="row mt-4">                     
                     <div class="col-6">
