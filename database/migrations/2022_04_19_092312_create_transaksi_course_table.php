@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreign('id_course')->references('id_course')->on('course')->onUpdate('cascade')->onDelete('cascade');
             $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('status_pembayaran')->default('Belum Lunas');
+            $table->string('bukti_transfer')->default('Tidak Ada');
             $table->timestamps();
         });
     }

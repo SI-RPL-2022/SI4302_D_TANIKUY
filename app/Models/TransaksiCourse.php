@@ -12,6 +12,8 @@ class TransaksiCourse extends Model
     protected $primaryKey = 'id_transaksi_course';
     protected $fillable = [    
     'id_course',
-    'id_user'
+    'id_user',
+    'status_pembayaran',
+    'bukti_transfer'
     ];
 }

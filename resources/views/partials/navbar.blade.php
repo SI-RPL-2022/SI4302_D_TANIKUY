@@ -9,7 +9,7 @@
 		<div class="collapse navbar-collapse" id="navbarScroll">
 			<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="#">Home</a>
+					<a class="nav-link" aria-current="page" href="{{ url('/') }}">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ url('siswa/buy_paket') }}">Paket</a>
@@ -18,7 +18,7 @@
 					<a class="nav-link" href="{{ route('siswa.buy.course') }}">Course</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Forum</a>
+					<a class="nav-link" href="{{ route('forum.show') }}">Forum</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Blog</a>
@@ -33,7 +33,7 @@
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 						<li>
-							<a class="dropdown-item" href="#">Dashboard</a>
+							<a class="dropdown-item" href="{{url('siswa/dashboard')}}">Dashboard</a>
 						</li>					
 						<li><hr class="dropdown-divider"></li>
 						<li>

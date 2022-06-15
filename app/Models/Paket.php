@@ -12,8 +12,8 @@ class Paket extends Model
     protected $primaryKey = 'id_paket';
     protected $fillable = [
     'nama_paket',
-    'id_course',
-    'harga_paket'
+    'id_course',   
+    'harga_paket'    
     ];
 
     public function setCatAttribute($value)

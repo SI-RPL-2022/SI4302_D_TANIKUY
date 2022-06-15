@@ -16,7 +16,39 @@
         <div class="embed-responsive embed-responsive-16by9">
           <iframe width="560" height="315" class="embed-responsive-item" src="{{ $mod->link_video }}" frameborder="0" allowfullscreen></iframe>
         </div>        
-      </div>      
+      </div>
+      @if($mod->status_course === "Selesai")
+      <div class="text-end">        
+        <a href="#" style="color:black; text-decoration:none;"><i class="fa-solid fa-square-check"></i> Selesai Course</a>                                
+      </div>
+      @elseif($mod->status_course === "Belum Selesai")
+      <div class="text-end">                             
+        <button type="button" style="background:none; text-decoration:none; border:none; font-size:14px;" data-bs-toggle="modal" data-bs-target="#selesai_{{ $mod->id_akses_course }}">
+          <i class="far fa-square"></i> Selesai Course
+        </button>
+      </div>
+      <div class="modal fade" id="selesai_{{ $mod->id_akses_course }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Selesai Course</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Apakah anda yakin bahwa course ini sudah selesai?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-sm btn-warning" data-bs-dismiss="modal">Tidak</button>
+              <form action="{{ url('siswa/verifikasi-selesai-course/'.$mod->id_akses_course) }}" action="post">
+                @csrf                    
+                <input type="text" name="status_course" value="Selesai" hidden>
+                <button type="submit" class="btn btn-sm btn-danger">Ya</button>                        
+              </form>                      
+            </div>
+          </div>
+        </div>
+      </div>   
+      @endif    
     </div>
   </div>
 </div>  

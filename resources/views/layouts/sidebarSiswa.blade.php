@@ -1,16 +1,11 @@
   <div class="col-md-3">
-    <div class=" p-4 text-white rounded-3" style="background: #579924; height:295px;">
+    <div class=" p-4 text-white rounded-3" style="background: #579924; height:335px;">
       <ul class="list-unstyled ps-0">
-        <!-- <li class="mb-1 ">
-          <a class="btn btn-toggle align-items-center rounded collapsed text-light" href="{{ route('siswa.buy.course') }}" > Course</a>
-          <div class="collapse show" id="home-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-light rounded">Overview</a></li>
-              <li><a href="#" class="link-light rounded">Updates</a></li>
-              <li><a href="#" class="link-light rounded">Reports</a></li>
-            </ul>
+        <li class="mb-2">
+          <div class="d-grid gap-2"> 
+            <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ url('siswa/dashboard') }}">Dashboard</a>
           </div>
-        </li> -->
+        </li>
         <li class="mb-2">
           <div class="d-grid gap-2">
             <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ url('siswa/mycourse') }}">My Course</a>
@@ -35,6 +30,11 @@
         <li class="mb-0">
           <div class="d-grid gap-2">
             <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ route('siswa.riwayat.transaction.course') }}">Riwayat Transaksi</a>
+          </div>
+        </li>
+        <li class="mb-0">
+          <div class="d-grid gap-2">
+            <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ url('create-keluhan') }}">Keluhan</a>
           </div>
         </li>
       </ul>
