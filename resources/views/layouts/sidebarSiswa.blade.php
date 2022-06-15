@@ -23,20 +23,15 @@
         </li>
         <li class="mb-2">
           <div class="d-grid gap-2">
-            <button class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">Langganan</button>
-          </div>
-        </li>
-        <li class="border-top my-3"></li>
-        <li class="mb-0">
-          <div class="d-grid gap-2">
-            <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ route('siswa.riwayat.transaction.course') }}">Riwayat Transaksi</a>
-          </div>
-        </li>
-        <li class="mb-0">
-          <div class="d-grid gap-2">
             <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ url('create-keluhan') }}">Keluhan</a>
           </div>
         </li>
+        <li class="mb-2">
+          <div class="d-grid gap-2">
+            <a class="btn btn-toggle align-items-center rounded collapsed text-start" id="sidenav_menu" href="{{ route('siswa.riwayat.transaction.course') }}">Riwayat Transaksi</a>
+          </div>
+        </li>  
+        <li class="border-top my-3"></li>              
       </ul>
     </div>
   </div>

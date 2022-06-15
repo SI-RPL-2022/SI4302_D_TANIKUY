@@ -17,6 +17,7 @@
 
 
 @include('partials.navbar')
+@yield('carousel-data')
 <div class="container">
 	@yield('container')
 </div>

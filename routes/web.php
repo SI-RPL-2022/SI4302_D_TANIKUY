@@ -8,8 +8,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\AssessmentController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\ForumController;
-
 use App\Http\Controllers\KeluhanController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\GuestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -123,6 +124,11 @@ Route::post('forum/edit-forum/{id}', [ForumController::class, 'editForum'])->nam
 Route::get('forum/hapus-forum/{id}', [ForumController::class, 'hapusForum'])->name('forum.hapus');
 Route::post('forum/edit-reply/{id}', [ForumController::class, 'editReply'])->name('reply.forum.edit');
 Route::get('forum/hapus-reply/{id}', [ForumController::class, 'hapusReply'])->name('reply.forum.hapus');
+//NEW
+Route::get('blog', [GuestController::class, 'index']);
+Route::get('blog/cari', [GuestController::class, 'cariBlog']);
+Route::get('blog/cari-kategori', [GuestController::class, 'carikategoriBlog']);
+Route::get('blog/{slug}', [GuestController::class, 'detailBlog']);
 
 //ADMIN ROUTE
 Route::get('admin/listsoal', [AssessmentController::class, 'index'])->name('admin.liatsoal')->middleware('is_admin');
@@ -154,6 +160,13 @@ Route::get('admin/konfirmasi-transaksi/paket/hapus/{id}', [App\Http\Controllers\
 Route::get('admin/akses-course', [App\Http\Controllers\CourseController::class, 'showDataAkses'])->middleware('is_admin');
 Route::post('admin/akses-course/tambah', [App\Http\Controllers\CourseController::class, 'tambahDataAkses'])->middleware('is_admin');
 Route::get('admin/akses-course/hapus/{id}', [App\Http\Controllers\CourseController::class, 'hapusDataAkses'])->middleware('is_admin');
+//NEW
+Route::get('admin/blog', [App\Http\Controllers\BlogController::class, 'showDataBlog'])->middleware('is_admin');
+Route::get('admin/blog/tambah', [App\Http\Controllers\BlogController::class, 'tambahDataBlog'])->middleware('is_admin');
+Route::post('admin/blog/post', [App\Http\Controllers\BlogController::class, 'postDataBlog'])->middleware('is_admin');
+Route::get('admin/blog/edit/{id}', [App\Http\Controllers\BlogController::class, 'editDataBlog'])->middleware('is_admin');
+Route::post('admin/blog/update/{id}', [App\Http\Controllers\BlogController::class, 'updateDataBlog'])->middleware('is_admin');
+Route::get('admin/blog/delete/{id}', [App\Http\Controllers\BlogController::class, 'deleteDataBlog'])->middleware('is_admin');
 
 Route::get('/keluhan', [KeluhanController::class,'index']);
 Route::get('/create-keluhan', [KeluhanController::class,'create']);
