@@ -7,14 +7,14 @@
                 <div class="card-body" style="background-color: #deaa7b">
                     <img src="{{ asset('image/dashboardadmin-1.png') }}" style="float: left">
                     <p class="card-text" style="text-align: right">Courses</p>
-                    <a href="tambahCourse" class="card-footer btn" style="float: right;"><img src="image/add.png" width="15%">Add Courses</a>
+                    <a href="{{ url('tambahCourse') }}" class="card-footer btn" style="float: right;"><img src="image/add.png" width="15%">Add Courses</a>
                 </div>
             </div>
             <div class="card" style="width: 13rem;">
                 <div class="card-body" style="background-color: #deaa7b">
                     <img src="{{ asset('image/dashboardadmin-1.png') }}" style="float: left">
                     <p class="card-text" style="text-align: right">Package</p>
-                    <a href="tambahPaket" class="card-footer btn" style="float: right;"><img src="image/add.png" width="15%">Add Package</a>
+                    <a href="{{ url('admin/tambahPaket') }}" class="card-footer btn" style="float: right;"><img src="image/add.png" width="15%">Add Package</a>
                 </div>
             </div>
         </div>

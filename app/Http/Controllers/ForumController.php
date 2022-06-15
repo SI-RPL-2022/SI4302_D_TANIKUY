@@ -22,7 +22,7 @@ class ForumController extends Controller
     {                
         $mod = DB::table('forum')
                 ->select('forum.judul_forum', 'forum.isi_forum', 'users.name', 'forum.created_at',
-                        'forum.id_forum')
+                'forum.id_forum', 'forum.id_user')
                 ->join('users', 'users.id', '=', 'forum.id_user')                
                 ->orderBy('forum.created_at', 'DESC')
                 ->get();
@@ -49,11 +49,6 @@ class ForumController extends Controller
     public function showReply($id)
     {
         $forum = Forum::find($id);
-        // $mod = DB::table('forum')
-        //         ->select('forum.judul_forum', 'forum.isi_forum', 'users.name', 'forum.created_at')
-        //         ->join('users', 'users.id', '=', 'forum.id_user')                
-        //         ->orderBy('forum.created_at', 'DESC')
-        //         ->get();
         $count_reply = DB::table('reply_forum')                    
                         ->join('forum', 'reply_forum.id_forum', '=', 'forum.id_forum')                         
                         ->where('forum.id_forum', $id)                        
@@ -61,7 +56,7 @@ class ForumController extends Controller
                         ->count(); 
 
         $reply_forum = DB::table('reply_forum')
-                    ->select('reply_forum.isi_reply_forum', 'users.name', 'reply_forum.created_at')
+                    ->select('reply_forum.id_user', 'reply_forum.isi_reply_forum', 'reply_forum.id_reply_forum', 'users.name', 'reply_forum.created_at')
                     ->join('users', 'users.id', '=', 'reply_forum.id_user')                
                     ->join('forum', 'forum.id_forum', '=', 'reply_forum.id_forum')     
                     ->orderBy('reply_forum.created_at', 'DESC')
@@ -96,4 +91,37 @@ class ForumController extends Controller
         return view('showForum', compact('mod'));
     }
     
+    public function editForum(Request $request, $id)
+    {
+        $model = Forum::find($id);              
+        $model->isi_forum=$request->isi_forum;
+        $model->save();
+
+        return redirect()->back();
+    }
+
+    public function hapusForum($id)
+    {
+        $model = Forum::find($id);
+        $model->delete();
+
+        return redirect()->back();
+    }
+
+    public function editReply(Request $request, $id)
+    {
+        $model = ReplyForum::find($id);              
+        $model->isi_reply_forum=$request->isi_reply_forum;
+        $model->save();
+
+        return redirect()->back();
+    }
+
+    public function hapusReply($id)
+    {
+        $model = ReplyForum::find($id);
+        $model->delete();
+
+        return redirect()->back();
+    }
 }

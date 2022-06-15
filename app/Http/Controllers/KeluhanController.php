@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Keluhan;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\keluhanCreated;
 
 class KeluhanController extends Controller
 {
@@ -42,7 +44,8 @@ class KeluhanController extends Controller
         $x->keluhan=$request->keluhan;
 
         $x->save();
-        return redirect('/create-keluhan');
+        \Mail::to($x->email)->send(new keluhanCreated($x));
+        return redirect('/create-keluhan')->with('success','Keluhan Berhasil Dikirim');
     }
 
     /**
@@ -54,9 +57,7 @@ class KeluhanController extends Controller
     public function show($id)
     {
         $x = Keluhan::all();
-        return view('keluhan')->with([
-            'x'->$x
-        ]);
+        return view('keluhan',compact('x'));
     }
 
     /**

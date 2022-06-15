@@ -10,7 +10,8 @@
                     {{ $forum->judul_forum }}
                 </h4>
                 <p class="card-text fw-light" align="justify">{{ $forum->isi_forum }}</p>                
-                <p class="text-start" style="font-size:13px;">{{ $count_reply }} Comment</p> 
+                <p class="text-start" style="font-size:13px;">{{ $count_reply }} Comment</p>                 
+                
                 <div class="text-end text-muted">                                                           
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#replyForum"><i class="fas fa-comments"></i>
@@ -54,6 +55,36 @@
                         <small class="ms-2 fs-6">{{ $reply_forums->name }}</small>
                     </div>                                                                                
                     <p class="card-text fw-light" align="justify">{{ $reply_forums->isi_reply_forum }}</p>                    
+                    @if($reply_forums->id_user == Auth::user()->id)
+                    <div class="text-end">
+                        <button type="button" class="btn btn-sm btn-light"  data-bs-toggle="modal" data-bs-target="#editReply_{{ $reply_forums->id_reply_forum }}">
+                            <i class="fas fa-pencil-alt"></i> Edit
+                        </button>                        
+                        <a href="{{ url('forum/hapus-reply/'.$reply_forums->id_reply_forum) }}" class="btn btn-sm btn-secondary"><i class="fas fa-trash"></i> Hapus</a>
+                    </div>
+                    <div class="modal fade" id="editReply_{{ $reply_forums->id_reply_forum }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel" style="color:black;">Edit Reply Forum</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{ url('forum/edit-reply/'.$reply_forums->id_reply_forum) }}" method="post">
+                                    @csrf
+                                    <div class="form-group">                               
+                                        <textarea name="isi_reply_forum" class="form-control form-control-sm" rows="2" style="resize:none;">{{ $reply_forums->isi_reply_forum }}</textarea>                                                                                                  
+                                    </div>                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-sm btn-warning">Ubah</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                 </div>
             </div>  
         </div>
