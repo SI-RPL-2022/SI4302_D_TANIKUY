@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-1">
                         @if($check_like != NULL)
-                        <a href="{{ url('forum/show-reply/tambah-dislike/'.Auth::user()->id.'/'.$forum->id_forum) }}" class="btn btn-sm btn-light" style="background:none; border:none; font-size:13px;"><i class="far fa-thumbs-up"></i> Dislike</a>
+                        <a href="{{ url('forum/show-reply/tambah-dislike/'.Auth::user()->id.'/'.$forum->id_forum) }}" class="btn btn-sm btn-light" style="background:none; border:none; font-size:13px;"><i class="far fa-thumbs-down"></i> Dislike</a>
                         @endif
                     </div>
                     <div class="col-10">
